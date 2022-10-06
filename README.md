@@ -1,2 +1,2 @@
-# Learn-HTML
-This repository includes all the mini projects of mine written by HTML
+# Learn-WEB
+This repository includes all the codes of Web Technologies course.
