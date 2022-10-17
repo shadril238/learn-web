@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Third Example</title>
+</head>
+<body>
+
+	<h1>Registration</h1>
+
+	<form method="post" action="LoginAction.php" novalidate>
+		<label for="email">Email:</label>
+		<input type="email" name="email" id="email">
+		<br><br>
+		<label>Gender:</label>
+		<input type="radio" name="gender" value="m">Male
+		<input type="radio" name="gender" value="f">Female
+		<br><br>
+		<label>Favorite Language:</label>
+		<input type="checkbox" name="cpp" value="cpp">C++
+		<input type="checkbox" name="java" value="java">Java
+		<input type="checkbox" name="php" value="php">PHP
+		<br><br>
+		<label for="uname">Username:</label>
+		<input type="text" name="uname" id="uname" required>
+		<br><br>
+		<label for="password">Password:</label>
+		<input type="password" name="password" id="password">
+		<br><br>
+		<input type="submit" value="Login">
+	</form>
+
+</body>
+</html>
