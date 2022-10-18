@@ -24,8 +24,7 @@
                 <th> </th>
             </tr>
     <?php
-        $index1=0;
-        $index2=0;
+        $index=0;
         foreach($data as $rd){
             $fname=$rd->firstname;
             $lname=$rd->lastname;
@@ -34,12 +33,12 @@
                     <td>".$fname."</td>
                     <td>".$lname."</td>
                     <td>
-                        <a href='Update_Form.php?idx=".$index1."'>Edit</a>
-                        <a href='DeleteAction.php?idx=".$index1."'>Delete</a>
+                        <a href='Update_Form.php?idx=".$index."'>Edit</a>
+                        <a href='DeleteAction.php?idx=".$index."'>Delete</a>
                     </td>
                 </tr>
             ";
-            $index1++;
+            $index++;
         }  
     ?>
     </tbody>
