@@ -1,21 +1,26 @@
+<?php
+ session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Signuph</title>
+    <title>Patient Signup</title>
 </head>
 <body>
     <h1>Patient Signup</h1>
-    <form method="post" action="SignupAction_patient.php" novalidate>
+    <form method="post" enctype="multipart/form-data" action="../controllers/SignupAction_patient.php" novalidate>
     
         <label for="fname">First Name : </label>
         <input type="text" id="fname" name="fname">
         <br>
         <?php
-            if(isset($_GET['msg_fname'])){
-                echo $_GET['msg_fname'];
+            if(isset($_SESSION['msg_fname'])){
+                echo $_SESSION['msg_fname'];
+                unset($_SESSION['msg_fname']);
             }
         ?>
         <br>
@@ -24,8 +29,9 @@
         <input type="text" id="lname" name="lname">
         <br>
         <?php
-            if(isset($_GET['msg_lname'])){
-                echo $_GET['msg_lname'];
+            if(isset($_SESSION['msg_lname'])){
+                echo $_SESSION['msg_lname'];
+                unset($_SESSION['msg_lname']);
             }
         ?>
         <br>
@@ -34,8 +40,9 @@
         <input type="email" name="email" id="email" value="">
         <br>
         <?php
-            if(isset($_GET['msg_email'])){
-                echo $_GET['msg_email'];
+            if(isset($_SESSION['msg_email'])){
+                echo $_SESSION['msg_email'];
+                unset($_SESSION['msg_email']);
             }
         ?>
         <br>
@@ -44,8 +51,9 @@
         <input type="text" name="phn" id="phn">
         <br>
         <?php
-            if(isset($_GET['msg_phn'])){
-                echo $_GET['msg_phn'];
+            if(isset($_SESSION['msg_phn'])){
+                echo $_SESSION['msg_phn'];
+                unset($_SESSION['msg_phn']);
             }
         ?>
         <br>
@@ -54,8 +62,10 @@
         <input type="date" id="dob" name="dob">
         <br>
         <?php
-            if(isset($_GET['msg_dob'])){
-                echo $_GET['msg_dob'];
+            if(isset($_SESSION['msg_dob'])){
+                echo $_SESSION['msg_dob'];
+                unset($_SESSION['msg_dob']);
+
             }
         ?>
         <br>
@@ -69,8 +79,9 @@
         <label for="other">Other</label>
         <br>
         <?php
-            if(isset($_GET['msg_gender'])){
-                echo $_GET['msg_gender'];
+            if(isset($_SESSION['msg_gender'])){
+                echo $_SESSION['msg_gender'];
+                unset($_SESSION['msg_gender']);
             }
         ?>
         <br>
@@ -89,8 +100,9 @@
         </select>
         <br>
         <?php
-            if(isset($_GET['msg_bg'])){
-                echo $_GET['msg_bg'];
+            if(isset($_SESSION['msg_bg'])){
+                echo $_SESSION['msg_bg'];
+                unset($_SESSION['msg_bg']);
             }
         ?>
         <br>
@@ -99,8 +111,9 @@
         <textarea id="addr" name="address" cols="20" rows="1"></textarea>
         <br>
         <?php
-            if(isset($_GET['msg_addr'])){
-                echo $_GET['msg_addr'];
+            if(isset($_SESSION['msg_addr'])){
+                echo $_SESSION['msg_addr'];
+                unset($_SESSION['msg_addr']);
             }
         ?>
         <br>
@@ -175,8 +188,9 @@
         </select>
         <br>
         <?php
-            if(isset($_GET['msg_dis'])){
-                echo $_GET['msg_dis'];
+            if(isset($_SESSION['msg_dis'])){
+                echo $_SESSION['msg_dis'];
+                unset($_SESSION['msg_dis']);
             }
         ?>
         <br>
@@ -195,8 +209,9 @@
         </select>
         <br>
         <?php
-            if(isset($_GET['msg_div'])){
-                echo $_GET['msg_div'];
+            if(isset($_SESSION['msg_div'])){
+                echo $_SESSION['msg_div'];
+                unset($_SESSION['msg_div']);
             }
         ?>
         <br>
@@ -205,18 +220,32 @@
         <input type="text" id="pcode" name="postal_code">
         <br>
         <?php
-            if(isset($_GET['msg_postal'])){
-                echo $_GET['msg_postal'];
+            if(isset($_SESSION['msg_postal'])){
+                echo $_SESSION['msg_postal'];
+                unset($_SESSION['msg_postal']);
             }
         ?>
         <br>
+
+        <label for="photo">Upload Photo:</label>
+		<input type="file" name="photo" id="photo">
+        <br>
+        <?php 
+            if(isset($_SESSION['msg_photo'])){
+                echo $_SESSION['msg_photo'];
+                unset($_SESSION['msg_photo']);
+            }
+        ?>
+        <br>
+
 
         <label for="pass">Password : </label>
         <input type="password" id="pass" name="password">
         <br>
         <?php
-            if(isset($_GET['msg_pass'])){
-                echo $_GET['msg_pass'];
+            if(isset($_SESSION['msg_pass'])){
+                echo $_SESSION['msg_pass'];
+                unset($_SESSION['msg_pass']);
             }
         ?>
         <br>
@@ -225,8 +254,9 @@
         <input type="password" id="cpass" name="confirm_password">
         <br>
         <?php
-            if(isset($_GET['msg_cpass'])){
-                echo $_GET['msg_cpass'];
+            if(isset($_SESSION['msg_cpass'])){
+                echo $_SESSION['msg_cpass'];
+                unset($_SESSION['msg_cpass']);
             }
         ?>
         <br>
@@ -235,8 +265,9 @@
     </form>
     
     <?php
-        if(isset($_GET['msg'])){
-            echo $_GET['msg'];
+        if(isset($_SESSION['global_msg'])){
+            echo $_SESSION['global_msg'];
+            unset($_SESSION['global_msg']);
         }
     ?>
 </body>

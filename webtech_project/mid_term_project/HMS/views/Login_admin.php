@@ -8,9 +8,9 @@
 </head>
 <body>
     <h1>Admin Login</h1>
-    <form method="post" action="LoginAction_admin.php" novalidate>
+    <form method="post" action="../controllers/LoginAction_admin.php" novalidate>
         <label for="email">Email : </label>
-        <input type="email" name="email" id="email" value="need php validation[1]">
+        <input type="email" name="email" id="email" value="">
 
         <br>
         <?php
@@ -21,7 +21,7 @@
         <br>
 
         <label for="password">Password : </label>
-        <input type="password" name="password" id="password" value="need php validation[2]">
+        <input type="password" name="password" id="password" value="">
 
         <br>
         <?php
@@ -35,8 +35,8 @@
     </form>
 
     <?php
-        if(isset($_GET['msg'])){
-            echo $_GET['msg'];
+        if(isset($_GET['global_msg'])){
+            echo $_GET['global_msg'];
         }
     ?>
     
