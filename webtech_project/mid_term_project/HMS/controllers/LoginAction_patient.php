@@ -51,21 +51,21 @@
                         break;
                     }
                 }
-                if(isset($_SESSION['email'])){
+                if(isset($_SESSION['email']) and isset($_SESSION['patient_idx'])){
                     echo "Logged in successfully!";
+                    header("Location: ../controllers/ViewprofileAction_patient.php");
                     //echo "<a href = ""
                 }else{
-                    $_SESSION['global_msg']="Email and password not valid!";
+                    $_SESSION['global_msg']="Email and password not matched!";
                     header("Location: ../views/Login_patient.php");
                 }
             }else{
                 //file not exist
-                $_SESSION['global_msg']="Patient data not available";
+                $_SESSION['global_msg']="Patient data not available. Please contact with admin.";
                 header("Location: ../views/Login_patient.php");
             }
         }else{
             //error
-            
             header("Location: ../views/Login_patient.php");
         }
 

@@ -17,6 +17,8 @@
         $password=sanitize($_POST['password']);
         $c_password=sanitize($_POST['confirm_password']);
         $photo = $_FILES['photo'];
+        $security_ques="";
+        $security_ans="";
 
         var_dump($_FILES);
         $isValid=true;
@@ -140,9 +142,8 @@
                 $isValid=false;
                 $_SESSION['msg_cpass']="Password and confirm password not matched!";
             }
-            
         }	
-        //valid or not
+        //valid or not 
         if($isValid){
             //need to code
             //echo $f_name."<br>".$l_name."<br>".$email."<br>".$phone_no."<br>".$dob."<br>".$gender."<br>".$blood_group."<br>".$address."<br>".$district."<br>".$division."<br>".$postal_code."<br>".$password."<br>".$c_password."<br>".$photo."<br>";
@@ -174,7 +175,7 @@
                 $photo=$destination;
                 move_uploaded_file($source,$destination);
                 //json
-                $data=array("email"=>$email, "password"=>$password, "fname"=>$f_name,"lname"=>$l_name,"phone"=>$phone_no, "dob"=>$dob,"gender"=>$gender,"blood_group"=>$blood_group,"address"=>$address,"district"=>$district,"division"=>$division,"postal_code"=>$postal_code,"photo"=>$photo);
+                $data=array("email"=>$email, "password"=>$password, "fname"=>$f_name,"lname"=>$l_name,"phone"=>$phone_no, "dob"=>$dob,"gender"=>$gender,"blood_group"=>$blood_group,"address"=>$address,"district"=>$district,"division"=>$division,"postal_code"=>$postal_code,"photo"=>$photo, "security_ques"=>$security_ques, "security_ans"=>$security_ans);
                 $array_data[]=$data;
                 $final_data=json_encode($array_data);
 			    file_put_contents($filename,$final_data);
