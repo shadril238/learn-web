@@ -30,18 +30,19 @@
                 $current_data[$_SESSION['patient_idx']]=$data;
                 $current_data=json_encode($current_data);
 			    file_put_contents($filename,$current_data);
+                //security ques
                 $_SESSION['security_ques']=$security_ques;
                 $_SESSION['security_ans']=$security_ans;
             }else{
                 $_SESSION['global_msg']="Error in database. Please contact with admin.";
-                header("Location: ../views/Updateprofile_patient.php");
+                header("Location: ../views/Securityquestion_patient.php");
             }
         }else{
             //invalid
-            header("Location: ../views/Securityquestion.php");
+            header("Location: ../views/Securityquestion_patient.php");
         }
     }else{
         //something went wrong
-        header("Location: ../views/Securityquestion.php");
+        header("Location: ../views/Securityquestion_patient.php");
     }
 ?>

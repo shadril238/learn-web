@@ -4,6 +4,7 @@
         $_SESSION['global_msg']="Please login first!";
         header("Location: ../views/Login_patient.php");
     }
+    //echo $_SESSION['security_ques'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,13 +16,12 @@
 </head>
 <body>
     <h1>Set Security Question</h1>
-
-    <form method="post" action="../controllers/SecurityquestionAction.php" >
+    <form method="post" action="../controllers/SecurityquestionAction_patient.php" >
         <label for="security_ques">Question : </label>
         <select name="security_ques" id="security_ques">
-            <option value="">Select here </option>
+            <option value="" <?php echo ($_SESSION['security_ques']==="")?"selected":"" ?>>Select here </option>
             <option value="What is the last name of the teacher who gave you your first failing grade?" <?php echo ($_SESSION['security_ques']==="What is the last name of the teacher who gave you your first failing grade?")?"selected":"" ?>>What is the last name of the teacher who gave you your first failing grade?</option>
-            <option value="What is your pet's name?" <?php echo ($_SESSION['security_ques']==="What is your pet's name?")?"selected":"" ?>>What is your pet's name?</option>
+            <option value="What is your pets name?" <?php echo ($_SESSION['security_ques']==="What is your pets name?")?"selected":"" ?>>What is your pet's name?</option>
             <option value="In what year was your father born?" <?php echo ($_SESSION['security_ques']==="In what year was your father born?")?"selected":"" ?>>In what year was your father born?</option>
         </select>
         <br>
