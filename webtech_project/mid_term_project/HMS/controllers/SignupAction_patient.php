@@ -157,7 +157,7 @@
                 //checking if the email is unique
                 if(!is_null($array_data)){
                     foreach($array_data as $rd){
-                        if($rd["email"] === $email){
+                        if($rd['email'] === $email){
                             $_SESSION['msg_email']="Email must be unique!";
                             break;
                         }

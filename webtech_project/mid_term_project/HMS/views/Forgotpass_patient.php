@@ -12,8 +12,8 @@
 <body>
     <h1>Reset Password</h1>
 
-    <form action="../controllers/ForgotpassAction_patient.php" method="post">
-    <label for="email">Enter your email : </label>
+    <form action="../controllers/ForgotpassAction_patient.php" method="post" novalidate>
+        <label for="email">Email : </label>
         <input type="email" name="email" id="email" value="">
         <br>
         <?php
@@ -23,12 +23,23 @@
             }
         ?>
         <br>
-
         <label for="security_ques">Security Question : </label>
-        <label for="security_ques"><?php echo $_SESSION['security_ques']?></label>
-        <input type="text" id="security_ques" name="security_ques">
-        <br><br>
-        <label for="security_ans">Answer : </label> 
+        <select name="security_ques" id="security_ques">
+            <option value="" >Select here </option>
+            <option value="What is the last name of the teacher who gave you your first failing grade?" >What is the last name of the teacher who gave you your first failing grade?</option>
+            <option value="What is your pets name?" >What is your pet's name?</option>
+            <option value="In what year was your father born?" >In what year was your father born?</option>
+        </select>
+        <br>
+        <?php
+            if(isset($_SESSION['msg_securityQ'])){
+                echo $_SESSION['msg_securityQ'];
+                unset($_SESSION['msg_securityQ']);
+            }
+        ?>
+        <br>
+
+        <label for="security_ans">Security Answer : </label> 
         <input type="text" name="security_ans" id="security_ans">
         <br>
         <?php
@@ -61,7 +72,12 @@
         ?>
         <br>
         <input type="submit" value="Reset Password">
-
     </form>
+    <?php
+        if(isset($_SESSION['global_msg'])){
+            echo $_SESSION['global_msg'];
+            unset($_SESSION['global_msg']);
+        }
+    ?>
 </body>
 </html>

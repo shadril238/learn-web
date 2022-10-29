@@ -16,7 +16,7 @@
 </head>
 <body>
     <h1>Set Security Question</h1>
-    <form method="post" action="../controllers/SecurityquestionAction_patient.php" >
+    <form method="post" action="../controllers/SecurityquestionAction_patient.php" novalidate>
         <label for="security_ques">Question : </label>
         <select name="security_ques" id="security_ques">
             <option value="" <?php echo ($_SESSION['security_ques']==="")?"selected":"" ?>>Select here </option>

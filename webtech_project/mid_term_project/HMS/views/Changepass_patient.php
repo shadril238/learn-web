@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Change Password</h1>
-    <form action="../controllers/ChangepassAction_patient.php" method="post">
+    <form action="../controllers/ChangepassAction_patient.php" method="post" novalidate>
         <label for="pass">Current Password : </label>
         <input type="password" id="pass" name="password">
         <br>
