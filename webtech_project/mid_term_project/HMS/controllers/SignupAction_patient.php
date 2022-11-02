@@ -174,7 +174,7 @@
                 $destination="../models/patient_images/".$photo_name;
                 $photo=$destination;
                 move_uploaded_file($source,$destination);
-                //json
+                //json 
                 $data=array("email"=>$email, "password"=>$password, "fname"=>$f_name,"lname"=>$l_name,"phone"=>$phone_no, "dob"=>$dob,"gender"=>$gender,"blood_group"=>$blood_group,"address"=>$address,"district"=>$district,"division"=>$division,"postal_code"=>$postal_code,"photo"=>$photo, "security_ques"=>$security_ques, "security_ans"=>$security_ans);
                 $array_data[]=$data;
                 $final_data=json_encode($array_data);

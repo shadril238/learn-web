@@ -59,6 +59,18 @@
         }
         return false;
     }
+
+    // Date Validation (Date > Present Date)
+    function isValidDate($date){
+        $currentDate = strtotime(date('Y-m-d'));
+        if($date < $currentDate){
+            return false;
+        }
+        return true;
+    }
+
+    // Time Validation (Time must be greater than present time)
+    
     
 
 ?>

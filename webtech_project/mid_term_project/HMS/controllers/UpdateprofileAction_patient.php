@@ -113,7 +113,7 @@
 			    file_put_contents($filename,$current_data);
                 header("Location: ../controllers/ViewprofileAction_patient.php");
             }else{
-                $_SESSION['global_msg']="Error in database. Please contact with admin.";
+                //$_SESSION['global_msg']="Error in database. Please contact with admin.";
                 header("Location: ../views/Updateprofile_patient.php");
             }
         }else{
