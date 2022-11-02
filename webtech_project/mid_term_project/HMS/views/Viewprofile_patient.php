@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['email']) and !isset($_SESSION['patient_idx'])){
-        $_SESSION['gloobal_msg']="Please login first!";
+        $_SESSION['global_msg']="Please login first!";
         header("Location: ../views/Login_patient.php");
     }
 ?>
