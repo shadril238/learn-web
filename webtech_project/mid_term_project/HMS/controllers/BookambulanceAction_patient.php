@@ -63,7 +63,7 @@
 
         //valid 
         if($isValid){
-            /////echo $p_date ."<br>".$p_time ."<br>". time(format("HH:MM"));
+            //echo $p_date ."<br>".$p_time ."<br>". time(format("HH:MM"));
 
             $filename="../models/ambulance_data.json";
             $array_data=array();
@@ -78,6 +78,9 @@
                             break;
                         }
                     }
+                }else{
+                    $_SESSION['global_msg']="Data not found! Contract with admin...";
+                    header("Location: ../views/Bookambulance_patient.php");
                 }
                 // $current_data=json_encode($current_data);
 			    // file_put_contents($filename,$current_data);

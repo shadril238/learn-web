@@ -15,7 +15,7 @@
 </head>
 <body>
     <h1>Book Ambulance</h1>
-    <form action="../controllers/BookambulanceAction_patient.php" method="post">
+    <form action="../controllers/BookambulanceAction_patient.php" method="post" novalidate>
         <label for="addr">Pickup Address : </label>
         <textarea id="addr" name="address" cols="20" rows="1"></textarea>
         <br>
