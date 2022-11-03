@@ -42,7 +42,7 @@
         <br>
 
         <label for="email">Email : </label>
-        <input type="email" name="email" id="email" value="<?php echo (isset($_SESSION['email'])?$_SESSION['email']:"")?>">
+        <input type="email" name="email" id="email" value="<?php echo (isset($_SESSION['email'])?$_SESSION['email']:"")?>" disabled>
         <br><br>
 
         <label for="phn">Phone no : </label>

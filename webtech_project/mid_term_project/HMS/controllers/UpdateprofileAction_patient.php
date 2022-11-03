@@ -20,8 +20,6 @@
         $district=sanitize($_POST['district']);
         $division=sanitize($_POST['division']);
         $postal_code=sanitize($_POST['postal_code']);
-        $security_ques="";
-        $security_ans="";
         $isValid=true;
 
 
@@ -107,7 +105,7 @@
             if(file_exists($filename)){
                 $current_data=file_get_contents($filename);
 			    $current_data=json_decode($current_data);
-                $data=array("email"=>$_SESSION['email'], "password"=>$_SESSION['password'], "fname"=>$f_name,"lname"=>$l_name,"phone"=>$phone_no, "dob"=>$dob,"gender"=>$gender,"blood_group"=>$blood_group,"address"=>$address,"district"=>$district,"division"=>$division,"postal_code"=>$postal_code,"photo"=>$_SESSION['photo'],"security_ques"=>$security_ques, "security_ans"=>$security_ans);
+                $data=array("email"=>$_SESSION['email'], "password"=>$_SESSION['password'], "fname"=>$f_name,"lname"=>$l_name,"phone"=>$phone_no, "dob"=>$dob,"gender"=>$gender,"blood_group"=>$blood_group,"address"=>$address,"district"=>$district,"division"=>$division,"postal_code"=>$postal_code,"photo"=>$_SESSION['photo'],"security_ques"=>$_SESSION['security_ques'], "security_ans"=>$_SESSION['security_ans']);
                 $current_data[$_SESSION['patient_idx']]=$data;
                 $current_data=json_encode($current_data);
 			    file_put_contents($filename,$current_data);
