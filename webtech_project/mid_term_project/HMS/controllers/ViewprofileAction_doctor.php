@@ -25,7 +25,7 @@
         $_SESSION['security_ans']=$row->security_ans;
         $_SESSION['degree']=$row->degree;
         $_SESSION['department']=$row->department;
-
+        //echo $_SESSION['name'];
         header("Location: ../views/Viewprofile_doctor.php");
     }else{
         //file not exist
