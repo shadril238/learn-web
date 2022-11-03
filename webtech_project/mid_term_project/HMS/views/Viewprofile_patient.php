@@ -16,7 +16,7 @@
 </head>
 <body>
     <h1>View Patient Profile</h1>
-    <img src=<?php echo $_SESSION['photo']?> alt="Smiley face" width="42" height="42" style="vertical-align:middle">
+    <img src=<?php echo $_SESSION['photo']?> alt="Patient Profile Photo" width="42" height="42" style="vertical-align:middle">
     <form method="post" enctype="multipart/form-data" action="../controllers/ViewprofileAction_patient.php" novalidate>
     
         <label for="fname">First Name : </label>
