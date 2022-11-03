@@ -1,10 +1,10 @@
-<?php
+<?php 
     session_start();
-    include "Validation.php";
     if(!isset($_SESSION['email']) or !isset($_SESSION['doctor_idx'])){
         $_SESSION['global_msg']="Please login first!";
         header("Location: ../views/Login_doctor.php");
     }
+    include "Validation.php";
 
     if($_SERVER['REQUEST_METHOD']==="POST"){
         $date=sanitize($_POST['date']);
@@ -50,17 +50,21 @@
 
             if(!isset($_SESSION['global_msg'])){
                 $data=array("demail"=>$_SESSION['email'],"dname"=>$_SESSION['name'], "degree"=>$_SESSION['degree'],"department"=>$_SESSION['department'],"adate"=>$date,"atime"=>$time,"pemail"=>"","pname"=>"","status"=>"Available");
-                $array_data[]=$data;
+                $array_data[$_SESSION['idx']]=$data;
                 $final_data=json_encode($array_data);
 			    file_put_contents($filename,$final_data);
+                unset($_SESSION['idx']);
+                header("location:../views/ViewappointmentAvailable_doctor.php");
+
             }else{
-                header("Location: ../views/Addappointment_doctor.php");
+                header("Location: ../views/Updateappointment_doctor.php");
             }
         }else{
-            header("Location: ../views/Addappointment_doctor.php");
+            header("Location: ../views/Updateappointment_doctor.php");
         }
     }else{
         $_SESSION['global_msg']="Something went wrong!";
-        header("Location: ../views/Addappointment_doctor.php");
+        header("Location: ../views/Updateappointment_doctor.php");
     }
+
 ?>

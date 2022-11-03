@@ -54,6 +54,8 @@
                     echo "Logged in successfully!";
                     ///header("Location: ../controllers/ViewprofileAction_patient.php");
                     //echo "<a href = ""
+                    header("Location: ../controllers/ViewprofileAction_doctor.php");
+
                 }else{
                     $_SESSION['global_msg']="Email and password not matched!";
                     header("Location: ../views/Login_doctor.php");
