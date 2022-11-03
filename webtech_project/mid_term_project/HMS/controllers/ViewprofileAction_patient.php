@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!isset($_SESSION['email']) and !isset($_SESSION['patient_idx'])){
+    if(!isset($_SESSION['email']) or !isset($_SESSION['patient_idx'])){
         $_SESSION['global_msg']="Please login first!";
         header("Location: ../views/Login_patient.php");
     }

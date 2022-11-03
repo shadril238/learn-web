@@ -2,7 +2,7 @@
     session_start();
     include "Validation.php";
     
-    if(!isset($_SESSION['email']) and !isset($_SESSION['doctor_idx'])){
+    if(!isset($_SESSION['email']) or !isset($_SESSION['doctor_idx'])){
         $_SESSION['global_msg']="Please login first!";
         header("Location: ../views/Login_patient.php");
     }
