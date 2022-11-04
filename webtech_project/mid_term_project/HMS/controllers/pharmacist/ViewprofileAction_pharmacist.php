@@ -24,7 +24,7 @@
         $_SESSION['dob']=$row->dob;
         $_SESSION['gender']=$row->gender;
         $_SESSION['blood_group']=$row->blood_group;
-        $_SESSION['eduqual']=$row->eduqal;
+        $_SESSION['eduqual']=$row->eduqual;
         $_SESSION['photo']=$row->photo;
         $_SESSION['security_ques']=$row->security_ques;
         $_SESSION['security_ans']=$row->security_ans;

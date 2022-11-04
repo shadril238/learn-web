@@ -61,7 +61,7 @@
                     file_put_contents($filename,$current_data);
                     $_SESSION['password']=$new_pass;
                 }else{
-                    $_SESSION['global_msg']="Error in database. Please contact with pharmacist.";
+                    $_SESSION['global_msg']="Error in database. Please contact with admin.";
                     header("Location: ../../views/pharmacist/Changepass_pharmacist.php");
                 }
             }else{
