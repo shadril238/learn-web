@@ -57,7 +57,7 @@
                                 <td>".$time."</td>
                                 <td>".$status."</td>
                                 <td>
-                                    <a href='../controllers/CompleteappointmentAction_doctor.php'>Mark as Complete</a>
+                                    <a href='../views/Prescribe_doctor.php?idx=".$index."'>Prescribe</a>
                                 </td>
                             </tr>
                             ";

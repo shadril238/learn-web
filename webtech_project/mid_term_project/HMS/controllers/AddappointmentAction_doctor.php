@@ -49,7 +49,7 @@
             }
 
             if(!isset($_SESSION['global_msg'])){
-                $data=array("demail"=>$_SESSION['email'],"dname"=>$_SESSION['name'], "degree"=>$_SESSION['degree'],"department"=>$_SESSION['department'],"adate"=>$date,"atime"=>$time,"pemail"=>"","pname"=>"","status"=>"Available");
+                $data=array("demail"=>$_SESSION['email'],"dname"=>$_SESSION['name'], "degree"=>$_SESSION['degree'],"department"=>$_SESSION['department'],"adate"=>$date,"atime"=>$time,"pemail"=>"","pname"=>"","status"=>"Available","prescribe"=>"");
                 $array_data[]=$data;
                 $final_data=json_encode($array_data);
 			    file_put_contents($filename,$final_data);
