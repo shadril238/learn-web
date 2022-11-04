@@ -169,7 +169,6 @@
         <input type="submit" value="Update">
 
     </form>
-    
     <?php
         if(isset($_SESSION['global_msg'])){
             echo $_SESSION['global_msg'];
