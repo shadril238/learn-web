@@ -1,6 +1,7 @@
 <?php
     session_start();
-    include "../Validation.php";
+
+    include "../controllers/Validation.php";
     
     if($_SERVER['REQUEST_METHOD']==="POST"){
         $email=$_POST['email'];
@@ -33,20 +34,20 @@
             $password=sanitize($password);
 
             //read json data
-            $filename="../../models/admin_data.json";
+            $filename="../models/pharmacist_data.json";
             $array_data=array();
            
             if(file_exists($filename)){
                 $current_data=file_get_contents($filename);
                 $array_data=json_decode($current_data, true);
-                $admin_idx=-1; //admin index
+                $pharmacist_idx=-1; //pharmacist index
                 foreach($array_data as $read_data){
-                    $admin_idx++;
+                    $pharmacist_idx++;
                     if($read_data['email']===$email and $read_data['password']===$password){
-                        //valid admin
+                        //valid pharmacist
                         $_SESSION["email"]=$email;
                         //$_SESSION["password"]=$password;
-                        $_SESSION["admin_idx"]=$admin_idx;
+                        $_SESSION["pharmacist_idx"]=$pharmacist_idx;
                         break;
                     }
                 }
@@ -55,21 +56,22 @@
                     //echo "<a href = ""
                 }else{
                     $_SESSION['global_msg']="Email and password not valid!";
-                    header("Location: ../../views/admin/Login_admin.php");
+                    header("Location: ../views/Login_pharmacist.php");
                 }
             }else{
                 //file not exist
-                $_SESSION['global_msg']="Admin data not available";
-                header("Location: ../../views/admin/Login_admin.php");
+                $_SESSION['global_msg']="Pharmacist data not available";
+                header("Location: ../views/Login_pharmacist.php");
             }
         }else{
             //error
-            header("Location: ../../views/admin/Login_admin.php");
+            
+            header("Location: ../views/Login_pharmacist.php");
         }
 
     }else{
         //error
         $_SESSION['global_msg']="Something went wrong!";
-        header("Location: ../../views/admin/Login_admin.php");
+        header("Location: ../views/Login_pharmacist.php");
     }
 ?>

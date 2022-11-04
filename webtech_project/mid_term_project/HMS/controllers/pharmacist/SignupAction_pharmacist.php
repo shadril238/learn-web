@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "../Validation.php";
+    include "Validation.php";
     if($_SERVER['REQUEST_METHOD']==="POST"){
         
         $f_name=sanitize($_POST['fname']);
@@ -11,16 +11,12 @@
         $gender=sanitize($_POST['gender']);
         $blood_group=sanitize($_POST['blood_group']);
         $address=sanitize($_POST['address']);
-        $district=sanitize($_POST['district']);
-        $division=sanitize($_POST['division']);
-        $postal_code=sanitize($_POST['postal_code']);
+        $eduqal=sanitize($_POST['eduqal']);
         $password=sanitize($_POST['password']);
         $c_password=sanitize($_POST['confirm_password']);
         $photo = $_FILES['photo'];
-        $security_ques="";
-        $security_ans="";
 
-        //var_dump($_FILES);
+        var_dump($_FILES);
         $isValid=true;
         //photo (files)
         if($photo['size']<=0){
@@ -98,27 +94,12 @@
             $_SESSION['msg_addr']="Please fill up the address line 1 properly!";
         }//else
 
-        //district
-        if($district===""){
+        //educational qualification
+        if($eduqal===""){
             $isValid=false;
-            $_SESSION['msg_dis']="Please select the district properly!";
+            $_SESSION['msg_eduqal']="Please enter your educational qualification properly";
         } //else
-        //division
-        if($division===""){
-            $isValid=false;
-            $_SESSION['msg_div']="Please select the division properly!";
-        }//else
-
-        //postal code
-        if(empty($postal_code)){
-            $isValid=false;
-            $_SESSION['msg_postal']="Please fill up the postal code properly!";
-        }else{
-            if(!isValidPostalCode($postal_code)){
-                $isValid=false;
-                $_SESSION['msg_postal']="Please provide valid postal code!";
-            }
-        }
+        
         //password
         if(empty($password)){
             $isValid=false;
@@ -150,7 +131,7 @@
             //echo $f_name."<br>".$l_name."<br>".$email."<br>".$phone_no."<br>".$dob."<br>".$gender."<br>".$blood_group."<br>".$address."<br>".$district."<br>".$division."<br>".$postal_code."<br>".$password."<br>".$c_password."<br>".$photo."<br>";
             
             //json file
-            $filename="../../models/admin_data.json";
+            $filename="../models/pharmacist_data.json";
             $array_data=array();
             if(file_exists($filename)){
                 $current_data=file_get_contents($filename);
@@ -172,22 +153,26 @@
                 $source = $photo['tmp_name'];
                 $photo_name = md5(date('Y-m-d H:i:s:u')); //md5 generates Hash
                 $photo_name=$photo_name.".".$ext;
-                $destination="../../models/admin_images/".$photo_name;
+                $destination="../models/pharmacist_images/".$photo_name;
                 $photo=$destination;
                 move_uploaded_file($source,$destination);
                 //json
-                $data=array("email"=>$email, "password"=>$password, "fname"=>$f_name,"lname"=>$l_name,"phone"=>$phone_no, "dob"=>$dob,"gender"=>$gender,"blood_group"=>$blood_group,"address"=>$address,"district"=>$district,"division"=>$division,"postal_code"=>$postal_code,"photo"=>$photo,"security_ques"=>$security_ques,"security_ans"=>$security_ans);
+                $data=array("email"=>$email, "password"=>$password, "fname"=>$f_name,"lname"=>$l_name,"phone"=>$phone_no, "dob"=>$dob,"gender"=>$gender,"blood_group"=>$blood_group,"address"=>$address,"eduqal"=>$eduqal,"photo"=>$photo);
                 $array_data[]=$data;
                 $final_data=json_encode($array_data);
 			    file_put_contents($filename,$final_data);
             }else{
-                header("Location: ../../views/admin/Signup_admin.php");
+                header("Location: ../views/Signup_pharmacist.php");
             }
         }else{
-            header("Location: ../../views/admin/Signup_admin.php");
+            //error message
+            echo "error";
+            header("Location: ../views/Signup_pharmacist.php");
         }
     } else{
         $_SESSION['global_msg']="Something went wrong!";
-        header("Location: ../../views/admin/Signup_admin.php");
+        header("Location: ../views/Signup_pharmacist.php");
+        //header("Location: Login_pharmacist.php?msg=Something went wrong!");
     }
+
 ?>
