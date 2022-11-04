@@ -12,7 +12,7 @@
 <body>
     <h1>Reset Password</h1>
 
-    <form action="../controllers/ForgotpassAction_pharmacist.php" method="post" novalidate>
+    <form action="../../controllers/pharmacist/ForgotpassAction_pharmacist.php" method="post" novalidate>
         <label for="email">Email : </label>
         <input type="email" name="email" id="email" value="">
         <br>

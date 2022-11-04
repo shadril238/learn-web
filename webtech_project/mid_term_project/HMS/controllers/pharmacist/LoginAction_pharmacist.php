@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    include "../controllers/Validation.php";
+    include "../Validation.php";
     
     if($_SERVER['REQUEST_METHOD']==="POST"){
         $email=$_POST['email'];
@@ -34,7 +34,7 @@
             $password=sanitize($password);
 
             //read json data
-            $filename="../models/pharmacist_data.json";
+            $filename="../../models/pharmacist_data.json";
             $array_data=array();
            
             if(file_exists($filename)){
@@ -53,25 +53,23 @@
                 }
                 if(isset($_SESSION['email'])){
                     echo "Logged in successfully!";
-                    //echo "<a href = ""
+                    //dashboard
                 }else{
                     $_SESSION['global_msg']="Email and password not valid!";
-                    header("Location: ../views/Login_pharmacist.php");
+                    header("Location: ../../views/pharmacist/Login_pharmacist.php");
                 }
             }else{
                 //file not exist
                 $_SESSION['global_msg']="Pharmacist data not available";
-                header("Location: ../views/Login_pharmacist.php");
+                header("Location: ../../views/pharmacist/Login_pharmacist.php");
             }
         }else{
             //error
-            
-            header("Location: ../views/Login_pharmacist.php");
+            header("Location: ../../views/pharmacist/Login_pharmacist.php");
         }
-
     }else{
         //error
         $_SESSION['global_msg']="Something went wrong!";
-        header("Location: ../views/Login_pharmacist.php");
+        header("Location: ../../views/pharmacist/Login_pharmacist.php");
     }
 ?>

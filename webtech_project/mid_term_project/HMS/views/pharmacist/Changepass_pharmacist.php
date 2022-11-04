@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(!isset($_SESSION['email']) or !isset($_SESSION['pharmacist_idx'])){
+        $_SESSION['global_msg']="Please login first!";
+        header("Location: Login_pharmacist.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +16,7 @@
 </head>
 <body>
     <h1>Change Password</h1>
-    <form action="../controllers/ChangepassAction_pharmacist.php" method="post" novalidate>
+    <form action="../../controllers/pharmacist/ChangepassAction_pharmacist.php" method="post" novalidate>
         <label for="pass">Current Password : </label>
         <input type="password" id="pass" name="password">
         <br>

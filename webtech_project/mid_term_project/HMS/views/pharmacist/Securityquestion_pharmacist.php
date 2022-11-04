@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if(!isset($_SESSION['email']) and !isset($_SESSION['pharmacist_idx'])){
+    if(!isset($_SESSION['email']) or !isset($_SESSION['pharmacist_idx'])){
         $_SESSION['global_msg']="Please login first!";
-        header("Location: ../views/Login_pharmacist.php");
+        header("Location: Login_pharmacist.php");
     }
     //echo $_SESSION['security_ques'];
 ?>
@@ -16,7 +16,7 @@
 </head>
 <body>
     <h1>Set Security Question</h1>
-    <form method="post" action="../controllers/SecurityquestionAction_pharmacist.php" novalidate>
+    <form method="post" action="../../controllers/pharmacist/SecurityquestionAction_pharmacist.php" novalidate>
         <label for="security_ques">Question : </label>
         <select name="security_ques" id="security_ques">
             <option value="" <?php echo ($_SESSION['security_ques']==="")?"selected":"" ?>>Select here </option>

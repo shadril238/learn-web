@@ -1,10 +1,11 @@
 <?php
     session_start();
-    include "Validation.php";
-    if(!isset($_SESSION['email']) and !isset($_SESSION['pharmacist_idx'])){
+    if(!isset($_SESSION['email']) or !isset($_SESSION['pharmacist_idx'])){
         $_SESSION['global_msg']="Please login first!";
-        header("Location: ../views/Login_pharmacist.php");
+        header("Location: ../../views/pharmacist/Login_pharmacist.php");
     }
+
+    include "../Validation.php";
 
     if($_SERVER['REQUEST_METHOD']==='POST'){
         $security_ques=sanitize($_POST['security_ques']);
@@ -22,11 +23,11 @@
         }
 
         if($isValid){
-            $filename="../models/pharmacist_data.json";
+            $filename="../../models/pharmacist_data.json";
             if(file_exists($filename)){
                 $current_data=file_get_contents($filename);
 			    $current_data=json_decode($current_data);
-                $data=array("email"=>$_SESSION['email'], "password"=>$_SESSION['password'], "fname"=>$_SESSION['fname'],"lname"=>$_SESSION['lname'],"phone"=>$_SESSION['phone'], "dob"=>$_SESSION['dob'],"gender"=>$_SESSION['gender'],"blood_group"=>$_SESSION['blood_group'],"address"=>$_SESSION['address'], "eduqal"=>$_SESSION['eduqal'],"photo"=>$_SESSION['photo'],"security_ques"=>$security_ques, "security_ans"=>$security_ans);
+                $data=array("email"=>$_SESSION['email'], "password"=>$_SESSION['password'], "fname"=>$_SESSION['fname'],"lname"=>$_SESSION['lname'],"phone"=>$_SESSION['phone'], "dob"=>$_SESSION['dob'],"gender"=>$_SESSION['gender'],"blood_group"=>$_SESSION['blood_group'],"eduqual"=>$_SESSION['eduqual'],"photo"=>$_SESSION['photo'],"security_ques"=>$security_ques, "security_ans"=>$security_ans);
                 $current_data[$_SESSION['pharmacist_idx']]=$data;
                 $current_data=json_encode($current_data);
 			    file_put_contents($filename,$current_data);
@@ -35,14 +36,14 @@
                 $_SESSION['security_ans']=$security_ans;
             }else{
                 $_SESSION['global_msg']="Error in database. Please contact with admin.";
-                header("Location: ../views/Securityquestion_pharmacist.php");
+                header("Location: ../../views/pharmacist/Securityquestion_pharmacist.php");
             }
         }else{
             //invalid
-            header("Location: ../views/Securityquestion_pharmacist.php");
+            header("Location: ../../views/pharmacist/Securityquestion_pharmacist.php");
         }
     }else{
         //something went wrong
-        header("Location: ../views/Securityquestion_pharmacist.php");
+        header("Location: ../../views/pharmacist/Securityquestion_pharmacist.php");
     }
 ?>

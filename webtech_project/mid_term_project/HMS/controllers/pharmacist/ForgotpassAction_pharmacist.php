@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "Validation.php";
+    include "../Validation.php";
     if($_SERVER['REQUEST_METHOD']==="POST"){
         $email=sanitize($_POST['email']);
         $security_ans=sanitize($_POST['security_ans']);
@@ -54,11 +54,10 @@
             $_SESSION['msg_securityQ']="Please select the security question properly!";
         }
         if($isValid){
-            $filename="../models/pharmacist_data.json";
+            $filename="../../models/pharmacist_data.json";
             $pharmacist_idx=-1; //pharmacist index
             $array_data=array();
             if(file_exists($filename)){
-                
                 $current_data=file_get_contents($filename);
                 $current_data=json_decode($current_data);
                 var_dump(count($current_data));
@@ -69,7 +68,7 @@
                             $validUser=true;
                             //$current_data=file_get_contents($filename);
                             
-                            $data=array("email"=>$current_data[$pharmacist_idx]->email, "password"=>$password, "fname"=>$current_data[$pharmacist_idx]->fname,"lname"=>$current_data[$pharmacist_idx]->lname,"phone"=>$current_data[$pharmacist_idx]->phone, "dob"=>$current_data[$pharmacist_idx]->dob,"gender"=>$current_data[$pharmacist_idx]->gender,"blood_group"=>$current_data[$pharmacist_idx]->blood_group,"address"=>$current_data[$pharmacist_idx]->address,"eduqal"=>$current_data[$pharmacist_idx]->eduqal,"photo"=>$current_data[$pharmacist_idx]->photo,"security_ques"=>$current_data[$pharmacist_idx]->security_ques, "security_ans"=>$current_data[$pharmacist_idx]->security_ans);
+                            $data=array("email"=>$current_data[$pharmacist_idx]->email, "password"=>$password, "fname"=>$current_data[$pharmacist_idx]->fname,"lname"=>$current_data[$pharmacist_idx]->lname,"phone"=>$current_data[$pharmacist_idx]->phone, "dob"=>$current_data[$pharmacist_idx]->dob,"gender"=>$current_data[$pharmacist_idx]->gender,"blood_group"=>$current_data[$pharmacist_idx]->blood_group,"eduqual"=>$current_data[$pharmacist_idx]->eduqual,"photo"=>$current_data[$pharmacist_idx]->photo,"security_ques"=>$current_data[$pharmacist_idx]->security_ques, "security_ans"=>$current_data[$pharmacist_idx]->security_ans);
                             $current_data[$pharmacist_idx]=$data;
                             $current_data=json_encode($current_data);
                             file_put_contents($filename,$current_data);
@@ -79,23 +78,23 @@
                 }else{
                     //array is null
                     $_SESSION['global_msg']="Pharmacist data not available. Please contact with admin.";
-                    header("Location: ../views/Forgotpass_pharmacist.php");
+                    header("Location: ../../views/pharmacist/Forgotpass_pharmacist.php");
                 }
                 if(!$validUser){
                     $_SESSION['global_msg']="Details not matched! Please try again.";
-                    header("Location: ../views/Forgotpass_pharmacist.php");
+                    header("Location: ../../views/pharmacist/Forgotpass_pharmacist.php");
                 }
 
             }else{
                 $_SESSION['global_msg']="Pharmacist data not available. Please contact with admin.";
-                header("Location: ../views/Forgotpass_pharmacist.php");
+                header("Location: ../../views/pharmacist/Forgotpass_pharmacist.php");
             }
         }else{
-            header("Location: ../views/Forgotpass_pharmacist.php");
+            header("Location: ../../views/pharmacist/Forgotpass_pharmacist.php");
         }
     }else{
         //something went wrong
         $_SESSION['msg_global']="Something went wrong!";
-        header("Location: ../views/Forgotpass_pharmacist.php");
+        header("Location: ../../views/pharmacist/Forgotpass_pharmacist.php");
     }
 ?>

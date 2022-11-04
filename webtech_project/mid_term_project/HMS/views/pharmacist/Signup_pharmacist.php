@@ -1,7 +1,6 @@
 <?php
- session_start();
+    session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +11,7 @@
 </head>
 <body>
     <h1>Pharmacist Signup</h1>
-    <form method="post" enctype="multipart/form-data" action="../controllers/SignupAction_pharmacist.php" novalidate>
-    
+    <form method="post" enctype="multipart/form-data" action="../../controllers/pharmacist/SignupAction_pharmacist.php" novalidate>
         <label for="fname">First Name : </label>
         <input type="text" id="fname" name="fname">
         <br>
@@ -106,30 +104,15 @@
             }
         ?>
         <br>
-
-        <label for="addr">Address Line 1 : </label>
-        <textarea id="addr" name="address" cols="20" rows="1"></textarea>
-        <br>
-        <?php
-            if(isset($_SESSION['msg_addr'])){
-                echo $_SESSION['msg_addr'];
-                unset($_SESSION['msg_addr']);
-            }
-        ?>
-        <br>
-
         <label for="eduqual">Educational Qualification : </label>
-        <textarea id="eduqual" name="eduqal" cols="30" rows="1"></textarea>
-
-        </select>
+        <input type="text" id="eduqual" name="eduqual">
         <br>
         <?php
-            if(isset($_SESSION['msg_eduqal'])){
-                echo $_SESSION['msg_eduqal'];
-                unset($_SESSION['msg_eduqal']);
+            if(isset($_SESSION['msg_eduqual'])){
+                echo $_SESSION['msg_eduqual'];
+                unset($_SESSION['msg_eduqual']);
             }
         ?>
-      
         <br>
 
         <label for="photo">Upload Photo:</label>

@@ -1,7 +1,6 @@
 <?php
     session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +11,9 @@
 </head>
 <body>
     <h1>Pharmacist Login</h1>
-    <form method="post" action="../controllers/LoginAction_pharmacist.php" novalidate>
+    <form method="post" action="../../controllers/pharmacist/LoginAction_pharmacist.php" novalidate>
         <label for="email">Email : </label>
         <input type="email" name="email" id="email" value="">
-
         <br>
         <?php
             if(isset($_SESSION['msg_email'])){
@@ -27,7 +25,6 @@
 
         <label for="password">Password : </label>
         <input type="password" name="password" id="password" value="">
-
         <br>
         <?php
             if(isset($_SESSION['msg_pass'])){
@@ -36,16 +33,13 @@
             }
         ?>
         <br>
-
         <input type="submit" value="Login">
     </form>
-
     <?php
         if(isset($_SESSION['global_msg'])){
             echo $_SESSION['global_msg'];
             unset($_SESSION['global_msg']);
         }
     ?>
-    
 </body>
 </html>

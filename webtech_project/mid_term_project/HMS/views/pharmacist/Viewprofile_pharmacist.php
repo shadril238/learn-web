@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if(!isset($_SESSION['email']) and !isset($_SESSION['pharmacist_idx'])){
+    if(!isset($_SESSION['email']) or !isset($_SESSION['pharmacist_idx'])){
         $_SESSION['global_msg']="Please login first!";
-        header("Location: ../views/Login_pharmacist.php");
+        header("Location: Login_pharmacist.php");
     }
 ?>
 
@@ -17,7 +17,7 @@
 <body>
     <h1>View Pharmacist Profile</h1>
     <img src=<?php echo $_SESSION['photo']?> alt="Smiley face" width="42" height="42" style="vertical-align:middle">
-    <form method="post" enctype="multipart/form-data" action="../controllers/ViewprofileAction_pharmacist.php" novalidate>
+    <form method="post" enctype="multipart/form-data" action="../../controllers/pharmacist/ViewprofileAction_pharmacist.php" novalidate>
     
         <label for="fname">First Name : </label>
         <input type="text" id="fname" name="fname" value="<?php echo (isset($_SESSION['fname'])?$_SESSION['fname']:"")?>">
@@ -42,7 +42,7 @@
         <br>
 
         <label for="email">Email : </label>
-        <input type="email" name="email" id="email" value="<?php echo (isset($_SESSION['email'])?$_SESSION['email']:"")?>">
+        <input type="email" name="email" id="email" value="<?php echo (isset($_SESSION['email'])?$_SESSION['email']:"")?>" disabled>
         <br>
         <?php
             if(isset($_SESSION['msg_email'])){
@@ -111,31 +111,17 @@
             }
         ?>
         <br>
-
-        <label for="addr">Address Line 1 : </label>
-        <textarea id="addr" name="address" cols="20" rows="1" ><?php echo (isset($_SESSION['address'])?$_SESSION['address']:"") ?></textarea>
+        <label for="eduqual">Educational Qualification : </label>
+        <input type="text" id="eduqual" name="eduqual" value="<?php echo (isset($_SESSION['eduqual'])?$_SESSION['eduqual']:"") ?>">
         <br>
         <?php
-            if(isset($_SESSION['msg_addr'])){
-                echo $_SESSION['msg_addr'];
-                unset($_SESSION['msg_addr']);
+            if(isset($_SESSION['msg_eduqual'])){
+                echo $_SESSION['msg_eduqual'];
+                unset($_SESSION['msg_eduqual']);
             }
         ?>
         <br>
-        <label for="eduqal">Educational Qualification : </label>
-        <textarea id="eduqal" name="eduqal" cols="20" rows="1" ><?php echo (isset($_SESSION['eduqal'])?$_SESSION['eduqal']:"") ?></textarea>
-        <br>
-        <?php
-            if(isset($_SESSION['msg_eduqal'])){
-                echo $_SESSION['msg_eduqal'];
-                unset($_SESSION['msg_eduqal']);
-            }
-        ?>
-
-        
-
     </form>
-    
     <?php
         if(isset($_SESSION['global_msg'])){
             echo $_SESSION['global_msg'];
