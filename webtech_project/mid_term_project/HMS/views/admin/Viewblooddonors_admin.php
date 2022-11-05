@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['email']) or !isset($_SESSION['admin_idx'])){
         $_SESSION['global_msg']="Please login first!";
-        header("Location: Login_patient.php");
+        header("Location: Login_admin.php");
     }
 ?>
 
@@ -50,8 +50,8 @@
                             <td>".$read_data->location."</td>
                             <td>".$read_data->phn_no."</td>
                             <td>
-                                <a href='../../views/admin/Updateblooddonors_admin.php?idx=".$index."'>Update</a>
-                                <a href='../../controllers/admin/DeleteblooddonorsAvailable_admin.php?idx=".$index."'>Delete</a>
+                                <a href='Updateblooddonors_admin.php?idx=".$index."'>Update</a>
+                                <a href='../../controllers/admin/Deleteblooddonors_admin.php?idx=".$index."'>Delete</a>
                             </td>
                         </tr>
                         ";
