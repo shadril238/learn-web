@@ -42,7 +42,6 @@
                 $product_array=array("p_id"=>$p_id, "p_name"=>$p_name, "p_price"=>$p_price, "p_qty"=>$p_qty);
                 $cart_data[]=$product_array;
             }
-
             
             var_dump($cart_data);
             $product_data=json_encode($cart_data);

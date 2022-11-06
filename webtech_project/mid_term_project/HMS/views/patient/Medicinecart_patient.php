@@ -41,7 +41,7 @@
                     <td><?php echo $values['p_qty']?></td>
                     <td><?php echo $values['p_price']?></td>
                     <td><?php echo ($values['p_price']*$values['p_qty'])?></td>
-
+                    <td><a href="../../controllers/patient/Removefromcart_patient.php?idx=<?php echo $values['p_id'];?>">Remove</a></td>
                 </tr>
                 <?php
                         $total += ($values['p_price']*$values['p_qty']);
@@ -52,7 +52,7 @@
                     <td></td>
                     <td>Total Amount</td>
                     <td><?php echo $total?></td>
-                    <td></td>
+                    <td><a href="../../controllers/patient/MedicineorderAction_patient.php">Place Order</a></td>
                 </tr>
             <?php
                 }else{
