@@ -31,6 +31,8 @@
         }
         $data=json_encode($data);
         file_put_contents($filename,$data);
+        $product_data=array();
+        setcookie("medicine_cart", $product_data,time()-(86000*7),'/');
     }else{
         //no data in cart
     }
