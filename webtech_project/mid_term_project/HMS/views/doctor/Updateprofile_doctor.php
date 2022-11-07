@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include "Header_doctor.php";
     if(!isset($_SESSION['email']) or !isset($_SESSION['doctor_idx'])){
         $_SESSION['global_msg']="Please login first!";
         header("Location:Login_doctor.php");
@@ -109,6 +109,9 @@
             echo $_SESSION['global_msg'];
             unset($_SESSION['global_msg']);
         }
+    ?>
+    <?php
+        include "Footer_doctor.php";
     ?>
 </body>
 </html>

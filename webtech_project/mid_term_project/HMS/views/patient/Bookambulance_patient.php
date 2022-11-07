@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include "Header_patient.php";
     if(!isset($_SESSION['email']) or !isset($_SESSION['patient_idx'])){
         $_SESSION['global_msg']="Please login first!";
         header("Location: Login_patient.php");
@@ -15,6 +15,8 @@
 </head>
 <body>
     <h1>Book Ambulance</h1>
+    <a href="Ambulancebookinghistory_patient.php">Ambulance Booking History</a>
+    <br>
     <form action="../../controllers/patient/BookambulanceAction_patient.php" method="post" novalidate>
         <label for="addr">Pickup Address : </label>
         <textarea id="addr" name="address" cols="20" rows="1"></textarea>
@@ -107,6 +109,9 @@
             echo $_SESSION['global_msg'];
             unset($_SESSION['global_msg']);
         }
+    ?>
+    <?php
+        include "Footer_patient.php";
     ?>
 </body>
 </html>

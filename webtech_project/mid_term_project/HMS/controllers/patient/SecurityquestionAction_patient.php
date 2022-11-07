@@ -34,6 +34,7 @@
                 //security ques
                 $_SESSION['security_ques']=$security_ques;
                 $_SESSION['security_ans']=$security_ans;
+                header("Location: ../../views/patient/Securityquestion_patient.php");
             }else{
                 $_SESSION['global_msg']="Error in database. Please contact with admin.";
                 header("Location: ../../views/patient/Securityquestion_patient.php");

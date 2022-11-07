@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include "Header_pharma.php";
     if(!isset($_SESSION['email']) or !isset($_SESSION['pharmacist_idx'])){
         $_SESSION['global_msg']="Please login first!";
         header("Location: Login_pharmacist.php");
@@ -66,6 +66,7 @@
             echo $_SESSION['msg_global'];
             unset($_SESSION['msg_global']);
         }
+        include "Footer_pharma.php";
     ?>
 </body>
 </html

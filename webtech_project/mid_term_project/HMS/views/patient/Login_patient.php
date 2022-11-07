@@ -37,6 +37,10 @@
         ?>
         <br>
         <input type="submit" value="Login">
+
+        <p>New User? <a href="Signup_patient.php">Signup here.</a></p>
+        <p>Forgot Password? <a href="Forgotpass_patient.php">Reset now.</a></p>
+        
     </form>
 
     <?php

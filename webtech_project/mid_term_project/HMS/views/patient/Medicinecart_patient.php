@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include "Header_patient.php";
     include "../../controllers/Validation.php";
 ?>
 
@@ -62,5 +62,8 @@
                 
         </tbody>
     </table>
+    <?php
+        include "Footer_patient.php";
+    ?>
 </body>
 </html>

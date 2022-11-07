@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include "Header_patient.php";
 ?>
 
 <!DOCTYPE html>
@@ -60,5 +60,8 @@
             ?> 
         </tbody>
     </table>
+    <?php
+        include "Footer_patient.php";
+    ?>
 </body>
 </html>
