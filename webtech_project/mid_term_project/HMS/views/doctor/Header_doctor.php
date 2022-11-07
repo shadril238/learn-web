@@ -12,6 +12,6 @@
 </head>
 <body>
     <h1>HMS</h1>
-        <p><a href="Viewprofile_doctor.php">View Profile</a>  <a href="Updateprofile_doctor.php">Update Profile</a>  <a href="Changepass_doctor.php">Change Password</a>  <a href="Securityquestion_doctor.php">Security Question</a> <a href="Addappointment_doctor.php">Add Appointment</a>  <a href="Updateappointment_doctor.php">Update Appointment</a> <a href="ViewappointmentAvailable_doctor.php">View Available Doctor Appointment</a> <a href="ViewappointmentBooked_doctor.php">View Booked Appoinemtnt</a> <a href="controllers/Logout.php">Logout</a></p>
+        <p><a href="Viewprofile_doctor.php">View Profile</a>  <a href="Updateprofile_doctor.php">Update Profile</a>  <a href="Changepass_doctor.php">Change Password</a>  <a href="Securityquestion_doctor.php">Security Question</a> <a href="Addappointment_doctor.php">Add Appointment</a>  <a href="Updateappointment_doctor.php">Update Appointment</a> <a href="ViewappointmentAvailable_doctor.php">View Available Doctor Appointment</a> <a href="ViewappointmentBooked_doctor.php">View Booked Appoinemtnt</a> <a href="../../controllers/Logout.php">Logout</a></p>
 </body>
 </html>

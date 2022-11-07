@@ -34,6 +34,9 @@
         ?>
         <br>
         <input type="submit" value="Login">
+
+        <p>New User? <a href="Signup_pharmacist.php">Signup here.</a></p>
+        <p>Forgot Password? <a href="Forgotpass_pharmacist.php">Reset now.</a></p>
     </form>
     <?php
         if(isset($_SESSION['global_msg'])){

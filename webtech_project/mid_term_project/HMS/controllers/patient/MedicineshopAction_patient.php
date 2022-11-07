@@ -45,8 +45,9 @@
             
             var_dump($cart_data);
             $product_data=json_encode($cart_data);
-            var_dump($product_data);
+            
             setcookie("medicine_cart",$product_data,time()+(86000*7),'/'); //7 days
+            header("Location:../../views/patient/Medicineshop_patient.php");
         }else{
             header("Location: ../../views/patient/Medicineshop_patient.php");
         }

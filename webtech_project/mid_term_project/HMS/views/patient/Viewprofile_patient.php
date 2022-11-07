@@ -19,7 +19,7 @@
     <table>
         <tbody>
             <tr>
-                <td><img src=<?php echo $_SESSION['photo']?> alt="Patient Profile Photo" width="42" height="42" style="vertical-align:middle"></td>               
+                <td><img src=<?php echo $_SESSION['photo']?> alt="Patient Profile Photo" width="100" height="100" style="vertical-align:middle"></td>               
             </tr>
             <tr>
                 <td>Name : </td>

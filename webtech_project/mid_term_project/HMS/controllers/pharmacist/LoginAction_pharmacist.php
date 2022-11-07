@@ -52,7 +52,7 @@
                     }
                 }
                 if(isset($_SESSION['email'])){
-                    echo "Logged in successfully!";
+                    header("Location: ViewprofileAction_pharmacist.php");
                     //dashboard
                 }else{
                     $_SESSION['global_msg']="Email and password not valid!";

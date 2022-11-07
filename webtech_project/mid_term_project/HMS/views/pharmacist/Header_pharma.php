@@ -13,6 +13,6 @@
 </head>
 <body>
     <h1>HMS</h1>
-    <p><a href="Viewprofile_pharmacist.php">View Profile</a>  <a href="Updateprofile_pharmacist.php">Update Profile</a>  <a href="Changepass_pharmacist.php">Change Password</a>  <a href="Securityquestion_pharmacist.php">Security Question</a>  <a href="Addmedicine_pharmacist.php">Add Medicine</a> <a href="Updatemedicine_pharmacist.php">Update Medicine</a> <a href="Viewmedicine_pharmacist.php">View Medicine</a> <a href="controllers/Logout.php">Logout</a></p>
+    <p><a href="Viewprofile_pharmacist.php">View Profile</a>  <a href="Updateprofile_pharmacist.php">Update Profile</a>  <a href="Changepass_pharmacist.php">Change Password</a>  <a href="Securityquestion_pharmacist.php">Security Question</a>  <a href="Addmedicine_pharmacist.php">Add Medicine</a> <a href="Updatemedicine_pharmacist.php">Update Medicine</a> <a href="Viewmedicine_pharmacist.php">View Medicine</a> <a href="../../controllers/Logout.php">Logout</a></p>
 </body>
 </html>

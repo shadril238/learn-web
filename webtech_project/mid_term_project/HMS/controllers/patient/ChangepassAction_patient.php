@@ -60,6 +60,8 @@
                     $current_data=json_encode($current_data);
                     file_put_contents($filename,$current_data);
                     $_SESSION['password']=$new_pass;
+                    header("Location: ../../views/patient/Viewprofile_patient.php");
+
                 }else{
                     $_SESSION['global_msg']="Error in database. Please contact with admin.";
                     header("Location: ../../views/patient/Changepass_patient.php");

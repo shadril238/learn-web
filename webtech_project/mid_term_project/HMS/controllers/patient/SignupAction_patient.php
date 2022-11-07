@@ -177,6 +177,7 @@
                 $array_data[]=$data;
                 $final_data=json_encode($array_data);
 			    file_put_contents($filename,$final_data);
+                header("Location: ../../views/patient/Login_patient.php");
             }else{
                 header("Location: ../../views/patient/Signup_patient.php");
             }

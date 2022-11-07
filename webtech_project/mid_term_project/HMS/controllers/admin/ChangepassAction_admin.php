@@ -59,6 +59,7 @@
                     $current_data=json_encode($current_data);
                     file_put_contents($filename,$current_data);
                     $_SESSION['password']=$new_pass;
+                    header("Location: ../../views/admin/Changepass_admin.php");
                 }else{
                     $_SESSION['global_msg']="Error in database.";
                     header("Location: ../../views/admin/Changepass_admin.php");

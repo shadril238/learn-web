@@ -51,7 +51,7 @@
                     }
                 }
                 if(isset($_SESSION['email'])){
-                    echo "Logged in successfully!";
+                    header("Location: ../../views/admin/Viewprofile_admin.php");
                     //echo "<a href = ""
                 }else{
                     $_SESSION['global_msg']="Email and password not valid!";
