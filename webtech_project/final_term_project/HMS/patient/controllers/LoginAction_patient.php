@@ -36,8 +36,8 @@
             include_once "../models/LoginDB_patient.php";
             if($p_email===$email and $p_pass===$password){
                 $_SESSION["email"]=$email;
-                //homepage
-                echo "Homepage";
+                //homepage (view profile)
+                header("Location: ../controllers/ViewprofileAction_patient.php");
                 mysqli_close($conn);
             }
             else{
