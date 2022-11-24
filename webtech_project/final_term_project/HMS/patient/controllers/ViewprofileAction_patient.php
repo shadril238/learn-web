@@ -20,5 +20,8 @@
     $_SESSION['postal_code']=$p_postal;
     $_SESSION['photo']=$p_photo;
     
+    $_SESSION['security_ques']=($p_sq===NULL)?"":$p_sq;
+    $_SESSION['security_ans']=($p_sa===NULL)?"":$p_sa;
+    
     header("Location: ../views/Viewprofile_patient.php");
 ?>
