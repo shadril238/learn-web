@@ -4,6 +4,7 @@
         $_SESSION['global_msg']="Please login first!";
         header("Location:Login_patient.php");
     }
+    //header( "refresh:1;url=../controllers/ViewprofileAction_patient.php");
 ?>
 
 <!DOCTYPE html>

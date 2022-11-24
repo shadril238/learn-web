@@ -1,11 +1,11 @@
 <?php
     session_start();
-
-    include "Validation.php";
+    require "Validation.php";
+    require "../models/LoginDB_patient.php";
     
     if($_SERVER['REQUEST_METHOD']==="POST"){
-        $email=$_POST['email'];
-        $password=$_POST['password'];
+        $email=sanitize($_POST['email']);
+        $password=sanitize($_POST['password']);
         $isValid=true;
 
         //email
@@ -30,20 +30,20 @@
         }
         ///valid
         if($isValid){
-            $email=sanitize($email);
-            $password=sanitize($password);
-            //database auth.
-            include_once "../models/LoginDB_patient.php";
-            if($p_email===$email and $p_pass===$password){
-                $_SESSION["email"]=$email;
-                //homepage (view profile)
-                header("Location: ../controllers/ViewprofileAction_patient.php");
-                mysqli_close($conn);
+            $isValid=false;
+            if(credentials($email, $password)){
+                $isValid=true;
             }
             else{
                 $_SESSION['global_msg'] = "Email or password incorrect";
 				header("Location: ../views/Login_patient.php");
             }       
+
+            if($isValid){
+                $_SESSION["email"]=$email;
+                //homepage (view profile)
+                header("Location: ../controllers/ViewprofileAction_patient.php");
+            }
         }
         else{
             header("Location: ../views/Login_patient.php");

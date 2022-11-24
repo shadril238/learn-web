@@ -12,4 +12,5 @@
 
     mysqli_stmt_bind_result($stmt, $p_fname, $p_lname, $p_phn, $p_dob, $p_gender, $p_bloodgroup, $p_address, $p_district, $p_division, $p_postal, $p_photo);
     mysqli_stmt_fetch($stmt);
+    mysqli_close($conn);
 ?>
