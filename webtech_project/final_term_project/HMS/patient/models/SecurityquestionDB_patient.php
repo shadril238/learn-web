@@ -15,7 +15,7 @@
 
         return $res;
     }
-    //retrieve security ques (not using this-> using session based auth)
+    //retrieve security ques (not using this function-> using session based auth)
     function retrieveSecurityQ(){
         $conn = mysqli_connect("localhost", "root", "", "hms");
         if (!$conn) {
