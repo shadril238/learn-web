@@ -59,7 +59,7 @@
 
         ///valid
         if($isValid){
-            var_dump(checkSecurity($email,$security_ques, $security_ans));
+            //var_dump(checkSecurity($email,$security_ques, $security_ans));
             if(checkSecurity($email, $security_ques, $security_ans)){
                 if(resetPass($email, $password)){
                     /////Important : form redirection and notification
@@ -81,6 +81,6 @@
     }else{
         //something went wrong
         $_SESSION['msg_global']="Something went wrong!";
-        header("Location: ../../views/patient/Forgotpass_patient.php");
+        header("Location: ../views/Forgotpass_patient.php");
     }
 ?>

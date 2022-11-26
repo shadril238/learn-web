@@ -111,7 +111,8 @@
         }
 
 
-    }else{
+    }
+    else{
         $_SESSION['global_msg']="Something went wrong!";
         header("Location: ../views/Updateprofile_patient.php");
     }

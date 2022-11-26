@@ -173,7 +173,8 @@
         
             header("Location: ../views/Signup_patient.php");
         }
-    } else{
+    } 
+    else{
         $_SESSION['global_msg']="Something went wrong!";
         header("Location: ../views/Signup_patient.php");
     }
