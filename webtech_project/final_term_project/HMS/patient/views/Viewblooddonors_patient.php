@@ -4,6 +4,7 @@
         $_SESSION['global_msg']="Please login first!";
         header("Location: Login_patient.php");
     }
+    require "../models/ViewblooddonorsDB_patient.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +23,6 @@
 </head>
 <body>
     <h1>Blood Donors List</h1>
-    <?php
-        $filename="../../models/blood_donors_data.json";
-        $data=file_get_contents($filename);
-        $data=json_decode($data);
-    ?>
     <table>
         <tbody>
             <tr>
@@ -38,21 +34,21 @@
                 <th>Contract No</th>
             </tr>
             <?php
-                foreach($data as $read_data){
-                    $blood_group=$read_data->blood_group;
-                    if($_SESSION['blood_group']===$blood_group){
+                if($result->num_rows>0){
+                    while($row=mysqli_fetch_assoc($result)){
                         echo "
                             <tr>
-                                <td>".$read_data->name."</td>
-                                <td>".$read_data->blood_group."</td>
-                                <td>".$read_data->age."</td>
-                                <td>".$read_data->gender."</td>
-                                <td>".$read_data->location."</td>
-                                <td>".$read_data->phn_no."</td>
+                                <td>".$row['d_name']."</td>
+                                <td>".$row['d_bg']."</td>
+                                <td>".$row['d_name']."</td>
+                                <td>".$row['d_gen']."</td>
+                                <td>".$row['d_loc']."</td>
+                                <td>".$row['d_phn']."</td>
                             </tr>
                             ";
                     }
                 }
+                mysqli_close($conn);
             ?>
         </tbody>
     </table>

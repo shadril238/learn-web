@@ -9,9 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Signup</title>
+    <link rel="stylesheet" type="text/css" href="css/SignupStyle.css">
 </head>
 <body>
     <h1>Patient Signup</h1>
+    <div class="main">
     <form method="post" enctype="multipart/form-data" action="../controllers/SignupAction_patient.php" novalidate>
     
         <label for="fname">First Name : </label>
@@ -201,7 +203,7 @@
         ?>
         <br>
 
-        <input type="submit" value="Signup">
+        <button type="submit">Sign Up</button>
     </form>
     
     <?php
@@ -210,5 +212,6 @@
             unset($_SESSION['global_msg']);
         }
     ?>
+    </div>
 </body>
 </html>
