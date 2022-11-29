@@ -12,12 +12,15 @@
     <link rel="stylesheet" type="text/css" href="css/LoginStyle.css">
 </head>
 <body>
-    <h1>Patient Login</h1>
     <div class="main">
+        <div class="logo">
+            <img src="../models/hms_logo.png" alt="HMS Logo">
+        </div>
+        <h3>Patient Login</h3>
         <form method="post" action="../controllers/LoginAction_patient.php" novalidate>
             <div class="inp">
-                <label for="email">Email </label>
-                <input type="email" name="email" id="email" placeholder="Enter your email">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="Email Address">
 
                 <br>
                 <?php
@@ -29,7 +32,7 @@
                 <br>
 
                 <label for="password">Password </label>
-                <input type="password" name="password" id="password" placeholder="Enter your password">
+                <input type="password" name="password" id="password" placeholder="Password">
 
                 <br>
                 <?php

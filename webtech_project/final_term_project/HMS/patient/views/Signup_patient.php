@@ -16,7 +16,7 @@
     <div class="main">
     <form method="post" enctype="multipart/form-data" action="../controllers/SignupAction_patient.php" novalidate>
     
-        <label for="fname">First Name : </label>
+        <label for="fname">First Name</label>
         <input type="text" id="fname" name="fname">
         <br>
         <?php
@@ -27,7 +27,7 @@
         ?>
         <br>
 
-        <label for="lname">Last Name : </label>
+        <label for="lname">Last Name</label>
         <input type="text" id="lname" name="lname">
         <br>
         <?php
@@ -38,7 +38,7 @@
         ?>
         <br>
 
-        <label for="email">Email : </label>
+        <label for="email">Email Address</label>
         <input type="email" name="email" id="email" value="">
         <br>
         <?php
@@ -49,7 +49,7 @@
         ?>
         <br>
 
-        <label for="phn">Phone no : </label>
+        <label for="phn">Phone No</label>
         <input type="text" name="phn" id="phn">
         <br>
         <?php
@@ -60,7 +60,7 @@
         ?>
         <br>
 
-        <label for="dob">Date of Birth : </label>
+        <label for="dob">Date of Birth</label>
         <input type="date" id="dob" name="dob">
         <br>
         <?php
@@ -72,7 +72,7 @@
         ?>
         <br>
 
-        <label for="gender">Gender : </label>
+        <label for="gender">Gender</label>
         <input type="radio" id="male" name="gender" value="male">
         <label for="male">Male</label>
         <input type="radio" id="female" name="gender" value="female">
@@ -88,7 +88,7 @@
         ?>
         <br>
 
-        <label for="bg">Blood Group : </label>
+        <label for="bg">Blood Group</label>
         <select name="blood_group" id="bg">
             <option value="">Select here</option>
             <option value="A+">A(+ve)</option>
@@ -109,7 +109,7 @@
         ?>
         <br>
 
-        <label for="addr">Address Line 1 : </label>
+        <label for="addr">Address Line 1</label>
         <textarea id="addr" name="address" cols="20" rows="1"></textarea>
         <br>
         <?php
@@ -120,7 +120,7 @@
         ?>
         <br>
 
-        <label for="dis">District : </label>
+        <label for="dis">District</label>
         <select name="district" id="dis">
             <option value="">Select here</option>
             <option value="Dhaka">Dhaka</option>
@@ -138,7 +138,7 @@
         ?>
         <br>
 
-        <label for="div">Division : </label>
+        <label for="div">Division</label>
         <select name="division" id="div">
             <option value="">Select here</option>
             <option value="Dhaka">Dhaka</option>
@@ -159,7 +159,7 @@
         ?>
         <br>
 
-        <label for="pcode">Postal Code : </label>
+        <label for="pcode">Postal Code</label>
         <input type="text" id="pcode" name="postal_code">
         <br>
         <?php
@@ -170,7 +170,7 @@
         ?>
         <br>
 
-        <label for="photo">Upload Photo:</label>
+        <label for="photo">Upload Photo</label>
 		<input type="file" name="photo" id="photo">
         <br>
         <?php 
@@ -181,7 +181,7 @@
         ?>
         <br>
 
-        <label for="pass">Password : </label>
+        <label for="pass">Password</label>
         <input type="password" id="pass" name="password">
         <br>
         <?php
@@ -192,7 +192,7 @@
         ?>
         <br>
 
-        <label for="cpass">Confirm Password : </label>
+        <label for="cpass">Confirm Password</label>
         <input type="password" id="cpass" name="confirm_password">
         <br>
         <?php

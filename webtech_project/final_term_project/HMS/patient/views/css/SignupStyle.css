@@ -14,9 +14,9 @@ div.main{
     background-color: rgb(255, 255, 255);
 }
 
-#email, #fname, #lname, #phn, #dob, #gender {
+#email, #fname, #lname, #phn, #dob, #gender, #dis, #div, #bg, #addr, #dis, #pcode, #photo, #pass, #cpass{
     width: 100%;
-    padding: 12px 20px;
+    padding: 8px 10px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
