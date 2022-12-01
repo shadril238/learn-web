@@ -19,7 +19,7 @@
         <h3>Patient Login</h3>
         <form method="post" action="../controllers/LoginAction_patient.php" novalidate>
             <div class="inp">
-                <label for="email">Email Address</label>
+                <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Email Address">
 
                 <br>
