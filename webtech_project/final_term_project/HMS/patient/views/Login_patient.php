@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Login</title>
     <link rel="stylesheet" type="text/css" href="css/LoginStyle.css">
+    <script src="js/Login.js"></script>
 </head>
 <body>
     <div class="main">
@@ -17,12 +18,12 @@
             <img src="../models/hms_logo.png" alt="HMS Logo">
         </div>
         <h3>Patient Login</h3>
-        <form method="post" action="../controllers/LoginAction_patient.php" novalidate>
+        <form method="post" action="../controllers/LoginAction_patient.php" novalidate onsubmit="return isValid(this);">
             <div class="inp">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Email Address">
-
                 <br>
+                <span id="email_msg" style="color:red"></span>
                 <?php
                     if(isset($_SESSION['msg_email'])){
                         echo $_SESSION['msg_email'];
@@ -33,8 +34,8 @@
 
                 <label for="password">Password </label>
                 <input type="password" name="password" id="password" placeholder="Password">
-
                 <br>
+                <span id="password_msg" style="color:red"></span>
                 <?php
                     if(isset($_SESSION['msg_pass'])){
                         echo $_SESSION['msg_pass'];

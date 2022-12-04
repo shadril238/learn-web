@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Signup</title>
     <link rel="stylesheet" type="text/css" href="css/SignupStyle.css">
+    <script src="js/Signup.js"></script>
 </head>
 <body>
     <div class="main">
@@ -17,12 +18,13 @@
             <img src="../models/hms_logo.png" alt="HMS Logo">
         </div>
         <h3>Patient Signup</h3>
-        <form method="post" enctype="multipart/form-data" action="../controllers/SignupAction_patient.php" novalidate>
+        <form method="post" enctype="multipart/form-data" action="../controllers/SignupAction_patient.php" novalidate onsubmit="return isValid(this);">
             <div class="row">
                 <div class="column1">
                     <label for="fname">First Name</label>
-                    <input type="text" id="fname" name="fname" value="s">
+                    <input type="text" id="fname" name="fname" value="">
                     <br>
+                    <span id="fname_msg" style="color:red"></span>
                     <?php
                         if(isset($_SESSION['msg_fname'])){
                             echo $_SESSION['msg_fname'];
@@ -36,6 +38,7 @@
                     <label for="lname">Last Name</label>
                     <input type="text" id="lname" name="lname">
                     <br>
+                    <span id="lname_msg" style="color:red"></span>
                     <?php
                         if(isset($_SESSION['msg_lname'])){
                             echo $_SESSION['msg_lname'];
@@ -49,6 +52,7 @@
                     <label for="email">Email Address</label>
                     <input type="email" name="email" id="email" value="">
                     <br>
+                    <span id="email_msg" style="color:red"></span>
                     <?php
                         if(isset($_SESSION['msg_email'])){
                             echo $_SESSION['msg_email'];
@@ -62,6 +66,7 @@
                     <label for="phn">Contract No</label>
                     <input type="text" name="phn" id="phn">
                     <br>
+                    <span id="phn_msg" style="color:red"></span>
                     <?php
                         if(isset($_SESSION['msg_phn'])){
                             echo $_SESSION['msg_phn'];
@@ -75,6 +80,7 @@
                     <label for="dob">Date of Birth</label>
                     <input type="date" id="dob" name="dob">
                     <br>
+                    <span id="dob_msg" style="color:red"></span>
                     <?php
                         if(isset($_SESSION['msg_dob'])){
                             echo $_SESSION['msg_dob'];
@@ -96,6 +102,7 @@
                         <label for="other">Other</label>
                         <br>
                         <br>   
+                        <span id="gender_msg" style="color:red"></span>
                         <?php
                             if(isset($_SESSION['msg_gender'])){
                                 echo $_SESSION['msg_gender'];
@@ -120,6 +127,7 @@
                     <option value="AB-">AB(-ve)</option>
                 </select>
                 <br>
+                <span id="bg_msg" style="color:red"></span>
                 <?php
                     if(isset($_SESSION['msg_bg'])){
                         echo $_SESSION['msg_bg'];
@@ -133,6 +141,7 @@
                     <label for="addr">Address Line 1</label>
                     <textarea id="addr" name="address" cols="20" rows="1"></textarea>
                     <br>
+                    <span id="addr_msg" style="color:red"></span>
                     <?php
                         if(isset($_SESSION['msg_addr'])){
                             echo $_SESSION['msg_addr'];
@@ -153,6 +162,7 @@
                     <option value="Jamalpur">Jamalpur</option>
                 </select>
                 <br>
+                <span id="dis_msg" style="color:red"></span>
                 <?php
                     if(isset($_SESSION['msg_dis'])){
                         echo $_SESSION['msg_dis'];
@@ -176,6 +186,7 @@
                     <option value="Sylhet">Sylhet</option>
                 </select>
                 <br>
+                <span id="div_msg" style="color:red"></span>
                 <?php
                     if(isset($_SESSION['msg_div'])){
                         echo $_SESSION['msg_div'];
@@ -189,6 +200,7 @@
                 <label for="pcode">Postal Code</label>
                 <input type="text" id="pcode" name="postal_code">
                 <br>
+                <span id="pcode_msg" style="color:red"></span>
                 <?php
                     if(isset($_SESSION['msg_postal'])){
                         echo $_SESSION['msg_postal'];
@@ -202,6 +214,7 @@
                 <label for="photo">Upload Photo</label>
                 <input type="file" name="photo" id="photo">
                 <br>
+                <span id="photo_msg" style="color:red"></span>
                 <?php 
                     if(isset($_SESSION['msg_photo'])){
                         echo $_SESSION['msg_photo'];
@@ -215,6 +228,7 @@
                 <label for="pass">Password</label>
                 <input type="password" id="pass" name="password">
                 <br>
+                <span id="pass_msg" style="color:red"></span>
                 <?php
                     if(isset($_SESSION['msg_pass'])){
                         echo $_SESSION['msg_pass'];
@@ -228,6 +242,7 @@
                 <label for="cpass">Confirm Password</label>
                 <input type="password" id="cpass" name="confirm_password">
                 <br>
+                <span id="cpass_msg" style="color:red"></span>
                 <?php
                     if(isset($_SESSION['msg_cpass'])){
                         echo $_SESSION['msg_cpass'];
@@ -240,7 +255,7 @@
 
             <button type="submit">Sign Up</button>
         </form>
-    
+    <span id="global_msg" style="color:red"></span>
     <?php
         if(isset($_SESSION['global_msg'])){
             echo $_SESSION['global_msg'];
