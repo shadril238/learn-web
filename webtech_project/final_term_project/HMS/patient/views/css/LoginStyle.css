@@ -45,7 +45,9 @@ button {
 button:hover {
     opacity: 0.85;
 }
-.link{
+h3, .link{
     text-align: center;
 }
+
+
 

@@ -80,9 +80,10 @@
             $_SESSION['msg_dob']="Please fill up the date-of-birth properly!";
         } //else
         //gender
-        if(!isset($gender)){
+        if(empty($gender)){
             $isValid=false;
             $_SESSION['msg_gender']="Please fill up the gender properly!";
+            //$_SESSION['msg_gender']=empty($gender);
         } //else
 
         //blood group
