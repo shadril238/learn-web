@@ -1,9 +1,10 @@
 <?php
-    include "Header_patient.php";
-    if(!isset($_SESSION['email']) or !isset($_SESSION['patient_idx'])){
+    session_start();
+    if(!isset($_SESSION['email'])){
         $_SESSION['global_msg']="Please login first!";
         header("Location:Login_patient.php");
     }
+    require "../models/BookambulanceDB_patient.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +23,6 @@
 </head>
 <body>
     <h1>Ambulance Booking History</h1>
-    <?php
-        $filename="../../models/ambulance_data.json";
-        $data=file_get_contents($filename);
-        $data=json_decode($data);
-    ?>
     <table>
         <tbody>
             <tr>
@@ -40,20 +36,20 @@
                 <th>Booking Status</th>
             </tr>
             <?php
-                $idx=1;
-                foreach($data as $read_data){
-                    $email=$read_data->user_email;
-                    if($_SESSION['email']===$email){
-                        echo "
+                $result=history();
+                if($result->num_rows>0){
+                    $idx=1;
+                    while($row=mysqli_fetch_assoc($result)){
+                        echo"
                             <tr>
                                 <td>".$idx++."</td>
-                                <td>".$read_data->pickup_location."</td>
-                                <td>".$read_data->pickup_district."</td>
-                                <td>".$read_data->pickup_division."</td>
-                                <td>".$read_data->pickup_postal_code."</td>
-                                <td>".$read_data->pickup_date."</td>
-                                <td>".$read_data->pickup_time."</td>
-                                <td>".$read_data->status."</td>
+                                <td>".$row['ploc']."</td>
+                                <td>".$row['pdis']."</td>
+                                <td>".$row['pdiv']."</td>
+                                <td>".$row['ppostal']."</td>
+                                <td>".$row['pdate']."</td>
+                                <td>".$row['ptime']."</td>
+                                <td>".$row['status']."</td>
                             </tr>
                             ";
                     }
@@ -61,8 +57,5 @@
             ?>
         </tbody>
     </table>
-    <?php
-        include "Footer_patient.php";
-    ?>
 </body>
 </html>
