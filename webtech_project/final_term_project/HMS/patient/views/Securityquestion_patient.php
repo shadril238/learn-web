@@ -13,6 +13,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Set Security Question</title>
+    <script src="js/Securitydetails.js"></script>
+
 </head>
 <body>
     <h1>Set Security Question</h1>
@@ -25,6 +27,7 @@
             <option value="In what year was your father born?" <?php echo ($_SESSION['security_ques']==="In what year was your father born?")?"selected":"" ?>>In what year was your father born?</option>
         </select>
         <br>
+        <span id="ques_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_securityQ'])){
                 echo $_SESSION['msg_securityQ'];
@@ -35,6 +38,7 @@
         <label for="security_ans">Answer : </label> 
         <input type="text" name="security_ans" id="security_ans" value="<?php echo (isset($_SESSION['security_ans'])?$_SESSION['security_ans']:"")?>">
         <br>
+        <span id="ans_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_securityA'])){
                 echo $_SESSION['msg_securityA'];
@@ -44,7 +48,7 @@
         <br>
         <input type="submit" value="Set">
     </form>
-
+    
     <?php
         if(isset($_SESSION['global_msg'])){
             echo $_SESSION['global_msg'];

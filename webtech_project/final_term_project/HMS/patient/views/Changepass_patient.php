@@ -13,13 +13,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change Password</title>
+    <script src="js/Changepass.js"></script>
+
 </head>
 <body>
     <h1>Change Password</h1>
-    <form action="../controllers/ChangepassAction_patient.php" method="post" novalidate>
+    <form action="../controllers/ChangepassAction_patient.php" method="post" novalidate onsubmit="return isValid(this);">
         <label for="pass">Current Password : </label>
         <input type="password" id="pass" name="password">
         <br>
+        <span id="pass_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_pass'])){
                 echo $_SESSION['msg_pass'];
@@ -31,6 +34,7 @@
         <label for="npass">New Password : </label>
         <input type="password" id="npass" name="npassword">
         <br>
+        <span id="npass_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_npass'])){
                 echo $_SESSION['msg_npass'];
@@ -42,6 +46,7 @@
         <label for="cpass">Confirm New Password : </label>
         <input type="password" id="cpass" name="cpassword">
         <br>
+        <span id="cpass_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_cpass'])){
                 echo $_SESSION['msg_cpass'];
@@ -51,7 +56,7 @@
         <br>
         <input type="submit" value="Change Password">
     </form>
-
+    <span id="global_msg" style="color:red"></span>
     <?php
         if(isset($_SESSION['global_msg'])){
             echo $_SESSION['global_msg'];

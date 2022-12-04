@@ -8,14 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset Password</title>
+    <script src="js/Resetpass.js"></script>
 </head>
 <body>
     <h1>Reset Password</h1>
 
-    <form action="../controllers/ResetpassAction_patient.php" method="post" novalidate>
+    <form action="../controllers/ResetpassAction_patient.php" method="post" novalidate onsubmit="return isValid(this);">
         <label for="email">Email : </label>
         <input type="email" name="email" id="email" value="">
         <br>
+        <span id="email_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_email'])){
                 echo $_SESSION['msg_email'];
@@ -31,6 +33,7 @@
             <option value="In what year was your father born?" >In what year was your father born?</option>
         </select>
         <br>
+        <span id="ques_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_securityQ'])){
                 echo $_SESSION['msg_securityQ'];
@@ -42,6 +45,7 @@
         <label for="security_ans">Security Answer : </label> 
         <input type="text" name="security_ans" id="security_ans">
         <br>
+        <span id="ans_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_securityA'])){
                 echo $_SESSION['msg_securityA'];
@@ -53,6 +57,7 @@
         <label for="npass">New Password : </label>
         <input type="password" id="npass" name="npassword">
         <br>
+        <span id="pass_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_npass'])){
                 echo $_SESSION['msg_npass'];
@@ -64,6 +69,7 @@
         <label for="cpass">Confirm New Password : </label>
         <input type="password" id="cpass" name="cpassword">
         <br>
+        <span id="cpass_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_cpass'])){
                 echo $_SESSION['msg_cpass'];
@@ -73,6 +79,7 @@
         <br>
         <input type="submit" value="Reset Password">
     </form>
+    <span id="global_msg" style="color:red"></span>
     <?php
         if(isset($_SESSION['global_msg'])){
             echo $_SESSION['global_msg'];
