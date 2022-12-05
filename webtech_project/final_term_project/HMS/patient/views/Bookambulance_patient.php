@@ -12,15 +12,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Ambulance</title>
+    <script src="js/Bookambulance.js"></script>
+
 </head>
 <body>
     <h1>Book Ambulance</h1>
     <a href="Ambulancebookinghistory_patient.php">Ambulance Booking History</a>
     <br>
-    <form action="../controllers/BookambulanceAction_patient.php" method="post" novalidate>
+    <form action="../controllers/BookambulanceAction_patient.php" method="post" novalidate onsubmit="return isValid(this);">
         <label for="addr">Pickup Address : </label>
         <textarea id="addr" name="address" cols="20" rows="1"></textarea>
         <br>
+        <span id="addr_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_addr'])){
                 echo $_SESSION['msg_addr'];
@@ -39,6 +42,7 @@
             <option value="Jamalpur">Jamalpur</option>
         </select>
         <br>
+        <span id="dis_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_dis'])){
                 echo $_SESSION['msg_dis'];
@@ -60,6 +64,7 @@
             <option value="Sylhet">Sylhet</option>
         </select>
         <br>
+        <span id="div_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_div'])){
                 echo $_SESSION['msg_div'];
@@ -71,6 +76,7 @@
         <label for="pcode">Postal Code : </label>
         <input type="text" id="pcode" name="postal_code">
         <br>
+        <span id="pcode_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_postal'])){
                 echo $_SESSION['msg_postal'];
@@ -82,6 +88,7 @@
         <label for="date">Pickup Date : </label>
         <input type="date" id="date" name="date">
         <br>
+        <span id="date_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_date'])){
                 echo $_SESSION['msg_date'];
@@ -94,6 +101,7 @@
         <label for="time">Pickup Time : </label>
         <input type="time" name="time" id="time">
         <br>
+        <span id="time_msg" style="color:red"></span>
         <?php
              if(isset($_SESSION['msg_time'])){
                 echo $_SESSION['msg_time'];
