@@ -6,13 +6,15 @@
 
 		$key = sanitize($_GET['email']);
 		$res = search($key);
+		var_dump(mysqli_fetch_assoc($res));
 		
 		$arr1 = array();
 		while($row = mysqli_fetch_assoc($res)) {
 			array_push($arr1, array("email" => $row['email'], "password" => $row['password']));
 		}
 	
-		echo json_encode($arr1);
+		//echo json_encode($arr1);
+		//echo json_encode($arr1);
 	}
 
 	function sanitize($data) {
