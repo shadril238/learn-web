@@ -10,25 +10,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Table Border Style-->
-    <style> 
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blood Donors List</title>
     <script src="js/Blooddonors.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/BlooddonorsStyle.css">
 </head>
 <body>
         
-
+    <div class="main">
     <h3>Blood Donors List</h3>
-    <form action="../controllers/Searchdonors.php" method="GET" onsubmit="return search(this);"> 
+    <form action="../controllers/Searchdonors.php" method="GET" onsubmit="return search(this);">
+    <div class="inp">
         <input type="search" name="name">
         <button type="submit">Search</button>
+    </div> 
     </form>
     <br>
     <div id='table'>
@@ -64,6 +61,7 @@
             ?>
         </tbody>
     </table>
+    </div>
     </div>
 </body>
 </html>
