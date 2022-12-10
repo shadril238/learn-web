@@ -12,53 +12,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/UpdateprofileStyle.css">
+    <script src="js/Updateprofile.js"></script>
     <title>Update Patient Profile</title>
 </head>
 <body>
-    <h1>Update Patient Profile</h1>
-    <img src=<?php echo $_SESSION['photo']?> alt="Profile Picture" width="50" height="50" style="vertical-align:middle">
-    
-    <form method="post" action="../controllers/UpdateprofileAction_patient.php" novalidate>
-        <label for="fname">First Name : </label>
-        <input type="text" id="fname" name="fname" value="<?php echo (isset($_SESSION['fname'])?$_SESSION['fname']:"")?>">
-        <br>
-        <?php
-            if(isset($_SESSION['msg_fname'])){
-                echo $_SESSION['msg_fname'];
-                unset($_SESSION['msg_fname']);
-            }
-        ?>
-        <br>
+    <div class="main">
+    <h3>Update Patient Profile</h3>
+    <div class="photo">
+        <img src=<?php echo $_SESSION['photo']?> alt="Profile Picture" width="100" height="100" style="vertical-align:middle">
+    </div>
+    <form method="post" action="../controllers/UpdateprofileAction_patient.php" novalidate onsubmit="return isValid(this);">
+        <div class="inp">
+        <div class="column1">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" value="<?php echo (isset($_SESSION['fname'])?$_SESSION['fname']:"")?>">
+            <br>
+            <span id="fname_msg" style="color:red"></span>
+            <?php
+                if(isset($_SESSION['msg_fname'])){
+                    echo $_SESSION['msg_fname'];
+                    unset($_SESSION['msg_fname']);
+                }
+            ?>
+            <br>
+        </div>
+        <div class="column2">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" value="<?php echo (isset($_SESSION['lname'])?$_SESSION['lname']:"")?>">
+            <br>
+            <span id="lname_msg" style="color:red"></span>
+            <?php
+                if(isset($_SESSION['msg_lname'])){
+                    echo $_SESSION['msg_lname'];
+                    unset($_SESSION['msg_lname']);
+                }
+            ?>
+            <br>
+        </div>
+        <div class="mail">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="<?php echo (isset($_SESSION['email'])?$_SESSION['email']:"")?>" disabled>
+            <br><br>
+        </div>
+        <div class="column1">
+            <label for="phn">Phone no</label>
+            <input type="text" name="phn" id="phn" value="<?php echo (isset($_SESSION['phone'])?$_SESSION['phone']:"")?>">
+            <br>
+            <span id="phn_msg" style="color:red"></span>
+            <?php
+                if(isset($_SESSION['msg_phn'])){
+                    echo $_SESSION['msg_phn'];
+                    unset($_SESSION['msg_phn']);
+                }
+            ?>
+            <br>
+        </div>
 
-        <label for="lname">Last Name : </label>
-        <input type="text" id="lname" name="lname" value="<?php echo (isset($_SESSION['lname'])?$_SESSION['lname']:"")?>">
-        <br>
-        <?php
-            if(isset($_SESSION['msg_lname'])){
-                echo $_SESSION['msg_lname'];
-                unset($_SESSION['msg_lname']);
-            }
-        ?>
-        <br>
-
-        <label for="email">Email : </label>
-        <input type="email" name="email" id="email" value="<?php echo (isset($_SESSION['email'])?$_SESSION['email']:"")?>" disabled>
-        <br><br>
-
-        <label for="phn">Phone no : </label>
-        <input type="text" name="phn" id="phn" value="<?php echo (isset($_SESSION['phone'])?$_SESSION['phone']:"")?>">
-        <br>
-        <?php
-            if(isset($_SESSION['msg_phn'])){
-                echo $_SESSION['msg_phn'];
-                unset($_SESSION['msg_phn']);
-            }
-        ?>
-        <br>
-
-        <label for="dob">Date of Birth : </label>
+        <div class="column2">
+        <label for="dob">Date of Birth</label>
         <input type="date" id="dob" name="dob" value=<?php echo (isset($_SESSION['dob'])?$_SESSION['dob']:"")?>>
         <br>
+        <span id="dob_msg" style="color:red"></span>
+
         <?php
             if(isset($_SESSION['msg_dob'])){
                 echo $_SESSION['msg_dob'];
@@ -67,24 +83,29 @@
             }
         ?>
         <br>
-
-        <label for="gender">Gender : </label>
-        <input type="radio" id="male" name="gender" value="male" <?php echo ($_SESSION['gender']==="male")?"checked":"" ?>>
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female" <?php echo ($_SESSION['gender']==="female")?"checked":"" ?>>
-        <label for="female">Female</label>
-        <input type="radio" id="other" name="gender" value="other" <?php echo ($_SESSION['gender']==="other")?"checked":"" ?>>
-        <label for="other">Other</label>
-        <br>
-        <?php
-            if(isset($_SESSION['msg_gender'])){
-                echo $_SESSION['msg_gender'];
-                unset($_SESSION['msg_gender']);
-            }
-        ?>
-        <br>
-
-        <label for="bg">Blood Group : </label>
+        </div>
+        <div class="column2">
+            <label for="gender">Gender</label>
+            <div class="gen">
+                <input type="radio" id="male" name="gender" value="male" <?php echo ($_SESSION['gender']==="male")?"checked":"" ?>>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" <?php echo ($_SESSION['gender']==="female")?"checked":"" ?>>
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other" <?php echo ($_SESSION['gender']==="other")?"checked":"" ?>>
+                <label for="other">Other</label>
+                <br>
+                <span id="gender_msg" style="color:red"></span>
+                <?php
+                    if(isset($_SESSION['msg_gender'])){
+                        echo $_SESSION['msg_gender'];
+                        unset($_SESSION['msg_gender']);
+                    }
+                ?>
+            </div>
+            <br>
+        </div>
+        <div class="column2">
+        <label for="bg">Blood Group</label>
         <select name="blood_group" id="bg">
             <option value="">Select here</option>
             <option value="A+" <?php echo ($_SESSION['blood_group']==="A+")?"selected":"" ?>>A(+ve)</option>
@@ -97,6 +118,7 @@
             <option value="AB-" <?php echo ($_SESSION['blood_group']==="AB-")?"selected":"" ?>>AB(-ve)</option>
         </select>
         <br>
+        <span id="bg_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_bg'])){
                 echo $_SESSION['msg_bg'];
@@ -104,10 +126,12 @@
             }
         ?>
         <br>
-
+        </div>
+        <div class="column1">
         <label for="addr">Address Line 1 : </label>
         <textarea id="addr" name="address" cols="20" rows="1" ><?php echo (isset($_SESSION['address'])?$_SESSION['address']:"") ?></textarea>
         <br>
+        <span id="addr_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_addr'])){
                 echo $_SESSION['msg_addr'];
@@ -115,8 +139,9 @@
             }
         ?>
         <br>
-
-        <label for="dis">District : </label>
+        </div>
+        <div class="column2">
+        <label for="dis">District</label>
         <select name="district" id="dis">
             <option value="">Select here</option>
             <option value="Dhaka"  <?php echo ($_SESSION['district']==="Dhaka")?"selected":"" ?>>Dhaka</option>
@@ -126,6 +151,7 @@
             <option value="Jamalpur" <?php echo ($_SESSION['district']==="Jamalpur")?"selected":"" ?>>Jamalpur</option>
         </select>
         <br>
+        <span id="dis_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_dis'])){
                 echo $_SESSION['msg_dis'];
@@ -133,8 +159,9 @@
             }
         ?>
         <br>
-
-        <label for="div">Division : </label>
+        </div>
+        <div class="column2">
+        <label for="div">Division</label>
         <select name="division" id="div">
             <option value="">Select here</option>
             <option value="Dhaka" <?php echo ($_SESSION['division']==="Dhaka")?"selected":"" ?>>Dhaka</option>
@@ -147,6 +174,7 @@
             <option value="Sylhet" <?php echo ($_SESSION['division']==="Sylhet")?"selected":"" ?>>Sylhet</option>
         </select>
         <br>
+        <span id="div_msg" style="color:red"></span>
         <?php
             if(isset($_SESSION['msg_div'])){
                 echo $_SESSION['msg_div'];
@@ -154,26 +182,31 @@
             }
         ?>
         <br>
+        </div>
+        <div class="column2">
+            <label for="pcode">Postal Code</label>
+            <input type="text" id="pcode" name="postal_code" value="<?php echo (isset($_SESSION['postal_code'])?$_SESSION['postal_code']:"")?>">
+            <br>
+            <span id="pcode_msg" style="color:red"></span>
+            <?php
+                if(isset($_SESSION['msg_postal'])){
+                    echo $_SESSION['msg_postal'];
+                    unset($_SESSION['msg_postal']);
+                }
+            ?>
+            <br>
+        </div>
 
-        <label for="pcode">Postal Code : </label>
-        <input type="text" id="pcode" name="postal_code" value="<?php echo (isset($_SESSION['postal_code'])?$_SESSION['postal_code']:"")?>">
-        <br>
-        <?php
-            if(isset($_SESSION['msg_postal'])){
-                echo $_SESSION['msg_postal'];
-                unset($_SESSION['msg_postal']);
-            }
-        ?>
-        <br>
-
-        <input type="submit" value="Update">
-
+        <button type="submit">Update</button>
+    </div>
     </form>
+    <span id="global_msg" style="color:red"></span>
     <?php
         if(isset($_SESSION['global_msg'])){
             echo $_SESSION['global_msg'];
             unset($_SESSION['global_msg']);
         }
     ?>
+    </div>
 </body>
 </html

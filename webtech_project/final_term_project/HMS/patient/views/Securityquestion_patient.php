@@ -14,12 +14,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Set Security Question</title>
     <script src="js/Securitydetails.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/SecurityquesStyle.css">
 
 </head>
 <body>
-    <h1>Set Security Question</h1>
+    <div class="main">
+    <h3>Set Security Question</h3>
     <form method="post" action="../controllers/SecurityquestionAction_patient.php" novalidate>
-        <label for="security_ques">Question : </label>
+        <div class="inp">
+        <label for="security_ques">Question </label>
         <select name="security_ques" id="security_ques">
             <option value="" <?php echo ($_SESSION['security_ques']==="")?"selected":"" ?>>Select here </option>
             <option value="What is the last name of the teacher who gave you your first failing grade?" <?php echo ($_SESSION['security_ques']==="What is the last name of the teacher who gave you your first failing grade?")?"selected":"" ?>>What is the last name of the teacher who gave you your first failing grade?</option>
@@ -35,7 +38,7 @@
             }
         ?>
         <br>
-        <label for="security_ans">Answer : </label> 
+        <label for="security_ans">Answer </label> 
         <input type="text" name="security_ans" id="security_ans" value="<?php echo (isset($_SESSION['security_ans'])?$_SESSION['security_ans']:"")?>">
         <br>
         <span id="ans_msg" style="color:red"></span>
@@ -46,7 +49,8 @@
             }
         ?>
         <br>
-        <input type="submit" value="Set">
+        <button type="submit">Submit</button>
+    </div>
     </form>
     
     <?php
@@ -55,5 +59,6 @@
             unset($_SESSION['global_msg']);
         }
     ?>
+    </div>
 </body>
 </html>

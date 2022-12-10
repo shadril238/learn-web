@@ -14,12 +14,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change Password</title>
     <script src="js/Changepass.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="css/ChangepassStyle.css">
 </head>
 <body>
-    <h1>Change Password</h1>
+    <div class="main">
+    <h3>Change Password</h3>
     <form action="../controllers/ChangepassAction_patient.php" method="post" novalidate onsubmit="return isValid(this);">
-        <label for="pass">Current Password : </label>
+        <div class="inp"> 
+        <label for="pass">Current Password</label>
         <input type="password" id="pass" name="password">
         <br>
         <span id="pass_msg" style="color:red"></span>
@@ -31,7 +33,7 @@
         ?>
         <br>
 
-        <label for="npass">New Password : </label>
+        <label for="npass">New Password</label>
         <input type="password" id="npass" name="npassword">
         <br>
         <span id="npass_msg" style="color:red"></span>
@@ -43,7 +45,7 @@
         ?>
         <br>
 
-        <label for="cpass">Confirm New Password : </label>
+        <label for="cpass">Confirm New Password</label>
         <input type="password" id="cpass" name="cpassword">
         <br>
         <span id="cpass_msg" style="color:red"></span>
@@ -54,7 +56,8 @@
             }
         ?>
         <br>
-        <input type="submit" value="Change Password">
+        <button type="submit">Change Password</button>
+    </div>
     </form>
     <span id="global_msg" style="color:red"></span>
     <?php
@@ -63,5 +66,6 @@
             unset($_SESSION['global_msg']);
         }
     ?>
+    <div>
 </body>
 </html>

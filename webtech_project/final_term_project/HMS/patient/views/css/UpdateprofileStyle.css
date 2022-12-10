@@ -1,0 +1,94 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+div.main{
+    border:2px solid rgba(76, 76, 251, 0.863);
+    border-radius: 10px;
+    margin: 8px 0;
+    width: 80%;
+    padding: 20px 20px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(255, 255, 255);
+}
+
+div.photo{
+    width: 7%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#fname, #lname, #phn, #dob, #dis, #div, #bg, #dis, #pcode, .gen{
+    width: 100%;
+    padding: 8px 20px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: 40px;
+}
+#email, #addr{
+    width: 100%;
+    padding: 8px 20px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: 40px;
+}
+
+button {
+    width: 98%;
+    margin-top: auto;
+    margin-left: 12px;
+    margin-right: auto;
+    background-color: rgba(76, 76, 251, 0.863);
+    color: #ffffff;
+    padding: 12px 18px;
+    font-size: 17px;
+    font-weight: 120;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.column1 {
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.column2 {
+    float: right;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.addr1{
+    float: left;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.mail{
+    float: left;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+button:hover {
+    opacity: 0.85;
+}
+h3, .link{
+    text-align: center;
+}
