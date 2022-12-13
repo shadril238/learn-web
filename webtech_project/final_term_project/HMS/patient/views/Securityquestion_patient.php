@@ -20,7 +20,7 @@
 <body>
     <div class="main">
     <h3>Set Security Question</h3>
-    <form method="post" action="../controllers/SecurityquestionAction_patient.php" novalidate>
+    <form method="post" action="../controllers/SecurityquestionAction_patient.php" novalidate onsubmit="return isValid(this);">
         <div class="inp">
         <label for="security_ques">Question </label>
         <select name="security_ques" id="security_ques">
