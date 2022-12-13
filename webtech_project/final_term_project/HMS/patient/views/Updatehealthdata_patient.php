@@ -92,7 +92,7 @@
             }
         ?>
         <br>
-        <button type="submit" id="submit">Submit</button>
+        <button type="submit" id="frmsubmit">Submit</button>
     </form>
     <br>
     <span id="global_msg" style="color:red"></span>

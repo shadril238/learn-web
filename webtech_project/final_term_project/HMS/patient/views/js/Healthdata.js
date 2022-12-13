@@ -7,7 +7,7 @@ function isValid(pForm){
 	const water=pForm.water.value;
 	const exer=pForm.exercise.value;
 	const wei=pForm.weight.value;
-	console.log(sleep);
+	//console.log(sleep);
 
 	let isValid=true;
 	document.getElementById("sleep_msg").innerHTML="";
@@ -52,24 +52,34 @@ function isValid(pForm){
 	if(isValid){
 		isValid=false;
 		$(document).ready(function(){
-			$("#submit").click(function(e){
-				e.preventDefault();
-				$.ajax({
-					url:action,
-					type:"POST",
-					data:"asleep="+sleep+"&abph="+bph+"&abpl="+bpl+"&aheartrate="+heartrate+"&awater="+water+"&aexercise="+exer+"&aweight="+wei,
-					success:function(result){
-						if(result==="1"){
-							alert("Success");
+			$('#frm').unbind("submit");
+			$("#frm").submit(function(e){
+				let sleep=$('#sleep').val();
+				let bph=$('#bp').val();
+				let bpl=$('#bp2').val();
+				let heartrate=$('#heartrate').val();
+				let water=$('#water').val();
+				let exer=$("#exercise").val();
+				let wei=$("#wei").val();
+				//$("#frmsubmit").click(function(e){
+					e.preventDefault();
+					$.ajax({
+						url:action,
+						type:"POST",
+						data:"asleep="+sleep+"&abph="+bph+"&abpl="+bpl+"&aheartrate="+heartrate+"&awater="+water+"&aexercise="+exer+"&aweight="+wei,
+						success:function(result){
+							if(result==="1"){
+								alert("Success");
+							}
+							else if(result==="0"){
+								alert("Failed");
+							}
 						}
-						else if(result==="0"){
-							alert("Failed");
-						}
-					}
-				});
+					});
+				//});
 			});
 		});
-		
+			
 	}
 	return isValid;
 
