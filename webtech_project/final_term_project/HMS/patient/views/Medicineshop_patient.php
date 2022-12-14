@@ -40,17 +40,16 @@
                 $result=viewMedicine();
                 if($result->num_rows>0){
                     while($row=mysqli_fetch_assoc($result)){
-                        $idx= $row['pid'];
             ?>
-                            <form action="../controllers/MedicineshopAction_patient.php" method="POST" novalidate onsubmit="return medShop(this);">
+                            <form class='frm' action="../controllers/MedicineshopAction_patient.php" method="POST" novalidate onsubmit="return medShop(this);">
                             <tr>
                                 <td><?php echo $row['pname'] ?></td>
                                 <td><?php echo $row['unitprice'] ?></td>
-                                <td> <input type='number' name='qty' value=1> </td>
-                                <input type='hidden' name='id' value=<?php echo $idx ?>>
-                                <input type='hidden' name='name' value=<?php echo $row['pname'] ?>>
-                                <input type='hidden' name='price' value=<?php echo $row['unitprice'] ?>>
-                                <td> <input type='submit' value='Add to Cart'> </td>       
+                                <td> <input type='number' name='qty' class="qty" value=1> </td>
+                                <input type='hidden' name='id' value="<?php echo $row['pid'] ?>">
+                                <input type='hidden' name='name' value="<?php echo $row['pname'] ?>">
+                                <input type='hidden' name='price' value="<?php echo $row['unitprice'] ?>">
+                                <td>  <button type="submit">Add to Cart</button></td>       
                             </tr>
                             </form>
             <?php                
@@ -58,28 +57,14 @@
                 }
 
             ?>
-            <!-- <?php
-                foreach($data as $read_data)
-                {
-            ?>
-            <form action="../../controllers/patient/MedicineshopAction_patient.php" method="POST" novalidate>
-                <tr>
-                    <td><?php echo $read_data->product_name ?></td>
-                    <td><?php echo $read_data->unit_price." tk"?></td>
-                    <td> <input type='number' name='qty' value=1> </td>
-
-                    <input type='hidden' name='id' value=<?php echo $read_data->product_id ?>>
-                    <input type='hidden' name='name' value=<?php echo $read_data->product_name ?>>
-                    <input type='hidden' name='price' value=<?php echo $read_data->unit_price ?>>
-                    <td> <input type='submit' value='Add to Cart'> </td>
-                </tr>
-            </form>
-            <br>
-            <span id="global_msg" style="color:red"></span>
-            <?php
-                }
-            ?>  -->
         </tbody>
     </table>
+    <span id="global_msg" style="color:red"></span>
+    <?php
+        if(isset($_SESSION['global_msg'])){
+            echo $_SESSION['global_msg'];
+            unset($_SESSION['global_msg']);
+        }
+    ?>
 </body>
 </html>
