@@ -54,5 +54,25 @@
         //var_dump($result);
         return $result;
     }
+
+    ///search doctor (not using this feature)
+    // function searchDoctor($name){
+    //     $conn = mysqli_connect("localhost", "root", "", "hms");
+    //     if (!$conn) {
+    //         die("Connection failed: " . mysqli_connect_error());
+    //     }
+
+    //     $stmt = mysqli_stmt_init($conn);
+    //     $sql = "SELECT * FROM doc_appointment WHERE d_name LIKE ? OR d_dept LIKE ?";
+    //     mysqli_stmt_prepare($stmt, $sql);
+    //     $name = "%" . $name . "%";
+    //     mysqli_stmt_bind_param($stmt, "ss", $name, $name);
+    //     mysqli_stmt_execute($stmt);
+
+    //     $result = mysqli_stmt_get_result($stmt);
+    //     mysqli_close($conn);
+
+    //     return $result;
+    // }
     
 ?>

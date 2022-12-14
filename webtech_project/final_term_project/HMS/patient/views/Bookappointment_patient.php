@@ -20,13 +20,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor's Appointment</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/Searchdoc.js"></script>
 </head>
 <body>
     <h1>Book Doctor's Appointment</h1>
+    <input type="search" name="search" id="search" placeholder="Search..">
+    <br>
     <a href="Appointmenthistory_patient.php">Appointment History</a>
     <br>
     <table>
-        <tbody>
+        <thead>
             <tr>
                 <th>Doctor Name</th>
                 <th>Degree</th>
@@ -36,6 +40,8 @@
                 <th>Status</th>
                 <th>Action</th>
             </tr>
+        </thead>
+        <tbody id='tdata'>
             <?php
                 $result=appointmentData();
                 if($result->num_rows>0){
