@@ -46,12 +46,15 @@
                 <button type="submit">Log In</button>
             </div>
         </form>
+        <br>
+        <div class="global_msg">
         <?php
             if(isset($_SESSION['global_msg'])){
                 echo $_SESSION['global_msg'];
                 unset($_SESSION['global_msg']);
             }
         ?>
+        </div>
         <div class="link">
             <p>New User? <a href="Signup_patient.php">Signup here.</a></p>
             <p>Forgot Password? <a href="Resetpass_patient.php">Reset now.</a></p>

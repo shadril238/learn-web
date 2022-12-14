@@ -35,7 +35,7 @@
                 $isValid=true;
             }
             else{
-                $_SESSION['global_msg'] = "Email or password incorrect";
+                $_SESSION['global_msg'] = "Invalid email or password.";
 				header("Location: ../views/Login_patient.php");
             }       
 
