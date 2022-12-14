@@ -14,7 +14,6 @@
     <title>Medicine Shop</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="js/Medshop.js"></script>
-    <script src="js/Medsearch.js"></script>
 
 </head>
 <body>
@@ -26,13 +25,6 @@
             unset($_SESSION['msg_global']);
         }
     ?>
-    <br>
-    <form action="../controllers/Searchmed.php" method="GET" onsubmit="return search(this);">
-    <div class="inp">
-        <input type="search" name="name">
-        <button type="submit">Search</button>
-    </div> 
-    </form>
     <br>
     <table>
         <thead>
