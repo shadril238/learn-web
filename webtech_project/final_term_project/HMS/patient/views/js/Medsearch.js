@@ -7,8 +7,8 @@ function search(pForm) {
 
 	let xhttp = new XMLHttpRequest();
 	xhttp.onload = function() {
-		document.getElementById("tabledata").innerHTML = this.responseText;
-		//alert(this.responseText);
+		//document.getElementById("tabledata1").innerHTML = this.responseText;
+		alert(this.responseText);
 	}
 	xhttp.open(method, url);
 	xhttp.send();

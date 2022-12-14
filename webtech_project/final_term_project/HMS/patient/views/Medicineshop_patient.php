@@ -14,6 +14,8 @@
     <title>Medicine Shop</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="js/Medshop.js"></script>
+    <script src="js/Medsearch.js"></script>
+
 </head>
 <body>
     <h1>Medicine Shop</h1>
@@ -25,6 +27,13 @@
         }
     ?>
     <br>
+    <form action="../controllers/Searchmed.php" method="GET" onsubmit="return search(this);">
+    <div class="inp">
+        <input type="search" name="name">
+        <button type="submit">Search</button>
+    </div> 
+    </form>
+    <br>
     <table>
         <thead>
             <tr>
@@ -34,25 +43,25 @@
                 <th>Action</th>
             </tr>
         </thead>
-        <tbody id="tabledata">
+        <tbody id="tabledata1">
             <?php
                 require "../models/MedicineshopDB_patient.php";
                 $result=viewMedicine();
                 if($result->num_rows>0){
                     while($row=mysqli_fetch_assoc($result)){
-            ?>
-                            <form class='frm' action="../controllers/MedicineshopAction_patient.php" method="POST" novalidate onsubmit="return medShop(this);">
+                        echo "
+                            <form class='frm' action='../controllers/MedicineshopAction_patient.php' method='POST' novalidate onsubmit='return medShop(this);'>
                             <tr>
-                                <td><?php echo $row['pname'] ?></td>
-                                <td><?php echo $row['unitprice'] ?></td>
-                                <td> <input type='number' name='qty' class="qty" value=1> </td>
-                                <input type='hidden' name='id' value="<?php echo $row['pid'] ?>">
-                                <input type='hidden' name='name' value="<?php echo $row['pname'] ?>">
-                                <input type='hidden' name='price' value="<?php echo $row['unitprice'] ?>">
-                                <td>  <button type="submit">Add to Cart</button></td>       
+                                <td>".$row['pname']."</td>
+                                <td>".$row['unitprice']."</td>
+                                <td> <input type='number' name='qty' class='qty' value=1> </td>
+                                <input type='hidden' name='id' value=".$row['pid'].">
+                                <input type='hidden' name='name' value=".$row['pname'].">
+                                <input type='hidden' name='price' value=".$row['unitprice'].">
+                                <td>  <button type='submit'>Add to Cart</button></td>       
                             </tr>
                             </form>
-            <?php                
+                            ";             
                     }
                 }
 
