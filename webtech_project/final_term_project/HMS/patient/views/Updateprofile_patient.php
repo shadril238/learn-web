@@ -16,9 +16,11 @@
     <script src="js/Updateprofile.js"></script>
     <title>Update Patient Profile</title>
 </head>
+
 <body>
-    <div class="main">
     <h3>Update Patient Profile</h3>
+    <div class="main">
+    
     <div class="photo">
         <img src=<?php echo $_SESSION['photo']?> alt="Profile Picture" width="100" height="100" style="vertical-align:middle">
     </div>

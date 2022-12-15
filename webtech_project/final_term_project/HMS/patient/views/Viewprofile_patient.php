@@ -14,10 +14,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Patient Profile</title>
+    <link rel="stylesheet" type="text/css" href="css/Profile.css">
 </head>
 <body>
-    <h1>View Patient Profile</h1>
-    <table>
+    <h3>Patient Profile</h3>
+    <div class="main">
+    <table class="profile">
         <tbody>
             <tr>
                 <td><img src=<?php echo $_SESSION['photo']?> alt="Patient Profile Photo" width="100" height="100" style="vertical-align:middle"></td>               
@@ -64,5 +66,6 @@
             </tr>
         </tbody>
     </table>
+    </div>
 </body>
 </html>

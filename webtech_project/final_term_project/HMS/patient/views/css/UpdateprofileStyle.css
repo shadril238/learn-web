@@ -19,6 +19,12 @@ div.photo{
     width: 7%;
     margin-left: auto;
     margin-right: auto;
+
+}
+img {
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #fname, #lname, #phn, #dob, #dis, #div, #bg, #dis, #pcode, .gen{
