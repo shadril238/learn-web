@@ -1,3 +1,6 @@
+<?php
+    include "Header1.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

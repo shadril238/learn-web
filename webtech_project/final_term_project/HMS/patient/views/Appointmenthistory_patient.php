@@ -4,6 +4,7 @@
         $_SESSION['global_msg']="Please login first!";
         header("Location: Login_patient.php");
     }
+    include "Header.php";
     require "../models/BookappointmentDB_patient.php";
 ?>
 <!DOCTYPE html>

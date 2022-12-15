@@ -45,6 +45,7 @@
                 <br>
                 <button type="submit">Log In</button>
             </div>
+            <br>
         </form>
         <br>
         <div class="global_msg">

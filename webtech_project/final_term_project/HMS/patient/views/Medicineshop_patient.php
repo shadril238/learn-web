@@ -1,4 +1,7 @@
 
+<?php
+    include "Header1.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +19,7 @@
     <div class="main">
     <h2>Medicine Shop</h2>
     <br>
-    <a href="Medicinecart_patient.php"><button id="but">Go to Cart</button></a>
+    <a href="Medicinecart_patient.php"><button id="link">Go to Cart</button></a>
     <br>
     <br>
     <table class="shop">

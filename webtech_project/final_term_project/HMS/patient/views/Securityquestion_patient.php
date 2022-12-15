@@ -1,9 +1,11 @@
+
 <?php
     session_start();
     if(!isset($_SESSION['email'])){
         $_SESSION['global_msg']="Please login first!";
         header("Location:Login_patient.php");
     }
+    include "Header.php";
     //echo $_SESSION['security_ques'];
 ?>
 <!DOCTYPE html>

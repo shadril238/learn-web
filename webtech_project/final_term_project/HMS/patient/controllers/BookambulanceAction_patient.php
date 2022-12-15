@@ -76,6 +76,7 @@
             }
             else{
                 $_SESSION['global_msg']="User has already a request pending!";
+                header("Location: ../views/Bookambulance_patient.php");
             }
         }else{
             header("Location: ../views/Bookambulance_patient.php");
