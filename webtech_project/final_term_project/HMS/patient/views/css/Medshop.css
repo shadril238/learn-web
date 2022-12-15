@@ -51,3 +51,13 @@ th, td {
 h2{
     text-align: center;
 }
+#but{
+
+    background-color: rgba(76, 76, 251, 0.863);
+    color: #ffffff;
+    padding: 6px 15px;
+    font-size: 10px;
+    font-weight: 50;
+    border-radius: 10px;
+    cursor: pointer;
+}

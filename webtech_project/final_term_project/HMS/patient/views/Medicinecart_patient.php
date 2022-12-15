@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <!--Table Border Style-->
-     <style> 
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicine Cart</title>
+    <link rel="stylesheet" type="text/css" href="css/Medcart.css">
 </head>
 <body>
-    <h1>Medicine Cart</h1>
-    <table>
-        <tbody>
+    <div class="main">
+    <h2>Medicine Cart</h2>
+    <table class="cart">
+        <thead>
             <tr>
                 <th>Medicine Name</th>
                 <th>Quantity</th>
@@ -23,6 +19,8 @@
                 <th>Total</th>
                 <th>Action</th>
             </tr>
+        </thead>
+        <tbody>
             <?php
                 if(isset($_COOKIE['medicine_cart'])){
                     $total=0;
@@ -57,5 +55,6 @@
                 
         </tbody>
     </table>
+    </div>
 </body>
 </html>

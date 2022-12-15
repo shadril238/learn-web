@@ -16,6 +16,9 @@
     <div class="main">
     <h2>Medicine Shop</h2>
     <br>
+    <a href="Medicinecart_patient.php"><button id="but">Go to Cart</button></a>
+    <br>
+    <br>
     <table class="shop">
         <thead>
             <tr>
