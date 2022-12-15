@@ -48,7 +48,7 @@
                     <td></td>
                     <td>Total Amount</td>
                     <td><?php echo $total?></td>
-                    <td><a href="../controllers/MedicineorderAction_patient.php">Place Order</a></td>
+                    <td><a href="Placeorder.php">Place Order</a></td>
                 </tr>
             <?php
                 }else{
