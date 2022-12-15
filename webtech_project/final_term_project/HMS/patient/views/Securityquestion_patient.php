@@ -20,9 +20,9 @@
 
 </head>
 <body>
-    <h3>Set Security Question</h3>
-    <div class="main">
     
+    <div class="main">
+    <h3>Security Question</h3>
     <form method="post" action="../controllers/SecurityquestionAction_patient.php" novalidate onsubmit="return isValid(this);">
         <div class="inp">
         <label for="security_ques">Question </label>
@@ -64,4 +64,7 @@
     ?>
     </div>
 </body>
+<?php
+    include "Footer.php";
+?>
 </html>
