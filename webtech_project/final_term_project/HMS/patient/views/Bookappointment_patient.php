@@ -10,26 +10,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Table Border Style-->
-    <style> 
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor's Appointment</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="js/Searchdoc.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/Appointment.css">
 </head>
 <body>
-    <h1>Book Doctor's Appointment</h1>
+    <div class="main">
+    <h3>Book Doctor's Appointment</h3>
+    <div class="s">
     <input type="search" name="search" id="search" placeholder="Search..">
+    </div>
+    
+    <div class="b">
+    <a href="Appointmenthistory_patient.php"><button id="but">Appointment History</button></a>
+    </div>
     <br>
-    <a href="Appointmenthistory_patient.php">Appointment History</a>
     <br>
-    <table>
+    <table class="doc">
         <thead>
             <tr>
                 <th>Doctor Name</th>
@@ -65,5 +66,6 @@
             ?>
         </tbody>
     </table>
+    </div>
 </body>
 </html> 

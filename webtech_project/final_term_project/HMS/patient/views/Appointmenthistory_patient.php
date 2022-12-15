@@ -9,22 +9,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Table Border Style-->
-    <style> 
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Appointment History</title>
+    <link rel="stylesheet" type="text/css" href="css/Appointmenthistory.css">
 </head>
 <body>
-    <h1>Appointment History</h1>
+    <div class="main">
+    <h3>Appointment History</h3>
     
-    <table>
-        <tbody>
+    <table class="doc">
+        <thead>
             <tr>
                 <th>Index</th>
                 <th>Doctor Name</th>
@@ -35,7 +32,8 @@
                 <th>Appointment Time</th>
                 <th>Appointment Status</th>
             </tr>
-
+        </thead>
+        <tbody>
             <?php
                 $result=history();
                 if($result->num_rows>0){
@@ -58,5 +56,6 @@
             ?>
         </tbody>
     </table>
+    </div>
 </body>
 </html>
