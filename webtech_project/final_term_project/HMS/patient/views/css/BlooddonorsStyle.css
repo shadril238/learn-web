@@ -7,7 +7,7 @@ div.main{
     border:2px solid rgba(76, 76, 251, 0.863);
     border-radius: 10px;
     margin: 8px 0;
-    width: 40%;
+    width: 80%;
     padding: 10px 20px;
 
     margin-top: 100px;
@@ -28,6 +28,7 @@ input{
     width: 60%;
     padding: 8px 20px;
     margin: 6px 0;
+    margin-left: 21%;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -35,9 +36,9 @@ input{
     height: 30px;
 }
 button{
-    width: 32%;
+    width: 15%;
     margin-top: auto;
-    margin-left: 12px;
+    margin-left: 17px;
     margin-right: auto;
     background-color: rgba(76, 76, 251, 0.863);
     color: #ffffff;
@@ -49,13 +50,33 @@ button{
     cursor: pointer;
 }
 table {
-  border-collapse: collapse;
-  width: 100%;
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
 }
 
 th, td {
   text-align: left;
   padding: 8px;
 }
+.btable thead tr {
+    background-color: rgba(76, 76, 251, 0.863);
+    color: #ffffff;
+    text-align: left;
+}
 
-tr:nth-child(even) {background-color: #f2f2f2;}
+.btable tbody tr {
+    border-bottom: 1px solid rgba(76, 76, 251, 0.863);
+}
+
+.btable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.btable tbody tr:last-of-type {
+    border-bottom: 2px solid rgba(76, 76, 251, 0.863);
+}

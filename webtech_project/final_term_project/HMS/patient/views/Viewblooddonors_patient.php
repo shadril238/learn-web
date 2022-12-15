@@ -29,7 +29,7 @@
     </form>
     <br>
     <div id='table'>
-    <table >
+    <table class="btable">
         <thead>
             <tr>
                 <th>Donor's Name</th>
