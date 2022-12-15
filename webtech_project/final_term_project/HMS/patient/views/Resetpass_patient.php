@@ -12,8 +12,9 @@
     <link rel="stylesheet" type="text/css" href="css/ResetpassStyle.css">
 </head>
 <body>
-    <div class="main">
     <h3>Reset Password</h3>
+    <div class="main">
+    
 
     <form action="../controllers/ResetpassAction_patient.php" method="post" novalidate onsubmit="return isValid(this);">
         <div class="inp">
