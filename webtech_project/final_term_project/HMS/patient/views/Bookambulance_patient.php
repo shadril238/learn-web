@@ -13,14 +13,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Ambulance</title>
     <script src="js/Bookambulance.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/Bookambulance.css">
 
 </head>
 <body>
-    <h1>Book Ambulance</h1>
-    <a href="Ambulancebookinghistory_patient.php">Ambulance Booking History</a>
+    <div class="main">
+    
+    <a href="Ambulancebookinghistory_patient.php"><button id="history">Ambulance Booking History</button></a>
+    <br>
+    <h3>Book Ambulance</h3>
     <br>
     <form action="../controllers/BookambulanceAction_patient.php" method="post" novalidate onsubmit="return isValid(this);">
-        <label for="addr">Pickup Address : </label>
+        <label for="addr">Pickup Address </label>
         <textarea id="addr" name="address" cols="20" rows="1"></textarea>
         <br>
         <span id="addr_msg" style="color:red"></span>
@@ -32,7 +36,7 @@
         ?>
         <br>
 
-        <label for="dis">District : </label>
+        <label for="dis">District </label>
         <select name="district" id="dis">
             <option value="">Select here</option>
             <option value="Dhaka">Dhaka</option>
@@ -51,7 +55,7 @@
         ?>
         <br>
 
-        <label for="div">Division : </label>
+        <label for="div">Division </label>
         <select name="division" id="div">
             <option value="">Select here</option>
             <option value="Dhaka">Dhaka</option>
@@ -73,7 +77,7 @@
         ?>
         <br>
 
-        <label for="pcode">Postal Code : </label>
+        <label for="pcode">Postal Code </label>
         <input type="text" id="pcode" name="postal_code">
         <br>
         <span id="pcode_msg" style="color:red"></span>
@@ -85,7 +89,7 @@
         ?>
         <br>
 
-        <label for="date">Pickup Date : </label>
+        <label for="date">Pickup Date </label>
         <input type="date" id="date" name="date">
         <br>
         <span id="date_msg" style="color:red"></span>
@@ -98,7 +102,7 @@
         ?>
         <br>
 
-        <label for="time">Pickup Time : </label>
+        <label for="time">Pickup Time </label>
         <input type="time" name="time" id="time">
         <br>
         <span id="time_msg" style="color:red"></span>
@@ -110,7 +114,7 @@
         ?>
         <br>
 
-        <input type="submit" value="Book Ambulance">
+        <button type="submit">Book Ambulance</button>
     </form>
     <?php
         if(isset($_SESSION['global_msg'])){
@@ -118,5 +122,6 @@
             unset($_SESSION['global_msg']);
         }
     ?>
+    </div>
 </body>
 </html>

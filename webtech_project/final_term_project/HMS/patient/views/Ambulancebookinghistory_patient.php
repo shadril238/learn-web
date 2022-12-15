@@ -10,21 +10,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Table Border Style-->
-    <style> 
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ambulance Booking History</title>
+    <link rel="stylesheet" type="text/css" href="css/Ambulancehistory.css">
 </head>
 <body>
-    <h1>Ambulance Booking History</h1>
-    <table>
-        <tbody>
+    <div class="main">
+    <h3>Ambulance Booking History</h3>
+    <table class="his">
+        <thead>
             <tr>
                 <th>Index</th>
                 <th>Pickup Location</th>
@@ -35,6 +31,8 @@
                 <th>Pickup Time</th>
                 <th>Booking Status</th>
             </tr>
+        </thead>
+        <tbody>
             <?php
                 $result=history();
                 if($result->num_rows>0){
@@ -57,5 +55,6 @@
             ?>
         </tbody>
     </table>
+</div>
 </body>
 </html>
