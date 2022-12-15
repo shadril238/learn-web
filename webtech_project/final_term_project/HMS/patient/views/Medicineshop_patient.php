@@ -2,31 +2,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Table Border Style-->
-    <style> 
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicine Shop</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="js/Medshop.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/Medshop.css">
 
 </head>
 <body>
-    <h1>Medicine Shop</h1>
+    <div class="main">
+    <h2>Medicine Shop</h2>
     <br>
-    <?php
-        if(isset($_SESSION['msg_global'])){
-            echo $_SESSION['msg_global'];
-            unset($_SESSION['msg_global']);
-        }
-    ?>
-    <br>
-    <table>
+    <table class="shop">
         <thead>
             <tr>
                 <th>Medicine Name</th>
@@ -67,5 +57,6 @@
             unset($_SESSION['global_msg']);
         }
     ?>
+    </div>
 </body>
 </html>
