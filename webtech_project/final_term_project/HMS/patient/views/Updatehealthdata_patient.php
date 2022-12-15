@@ -16,12 +16,14 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="js/Healthdata.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/Healthdata.css">
 </head>
 <body>
-    <h1>Update Your Daily Health Data</h1>
+    <div class="main">
+    <h3>Update Your Daily Health Data</h3>
     <form  id="frm" action="../controllers/UpdatehealthdataAction_patient.php" method="POST" novalidate onsubmit="return isValid(this);">
-        <label for="sleep">Sleeping Hours : </label>
-        <input type="number" id="sleep" name="sleep" min="0" max="14"> <strong>hour(s)</strong>
+        <label for="sleep">Sleeping Hours</label><br>
+        <input type="number" id="sleep" name="sleep" min="0" max="14" placeholder="in hour(s)">
         <br>
         <span id="sleep_msg" style="color:red"></span>
         <?php
@@ -32,11 +34,16 @@
         ?>
         <br>
 
-        <label for="bp">Blood Pressure : </label>
-        <input type="number" id="bp" name="bph"> <strong>/</strong> 
-        <input type="number" id="bp2" name="bpl"> <strong>mmHg</strong>
+        <label for="bp">Blood Pressure </label><br>
+        <div>
+        <div class="l"><input type="number" id="bp" name="bph" placeholder="High (mmHg)"> </div>
+        <div class="r"><input type="number" id="bp2" name="bpl" placeholder="Low (mmHg)"> </div>
+        <br>
+        <br>
         <br>
         <span id="bp_msg" style="color:red"></span>
+        </div>
+        
         <?php
             if(isset($_SESSION['msg_bp'])){
                 echo $_SESSION['msg_bp'];
@@ -45,8 +52,8 @@
         ?>
         <br>
 
-        <label for="heartrate">Heart Rate : </label>
-        <input type="number" id="heartrate" name="heartrate"> <strong>bpm</strong>
+        <label for="heartrate">Heart Rate </label><br>
+        <input type="number" id="heartrate" name="heartrate" placeholder="in bpm">
         <br>
         <span id="heartrate_msg" style="color:red"></span>
         <?php
@@ -57,8 +64,8 @@
         ?>
         <br>
 
-        <label for="water">Drinking Water : </label>
-        <input type="water" id="water" name="water"> <strong>litre(s)</strong>
+        <label for="water">Drinking Water </label><br>
+        <input type="water" id="water" name="water" placeholder="in litre(s)">
         <br>
         <span id="water_msg" style="color:red"></span>
         <?php
@@ -69,8 +76,9 @@
         ?>
         <br>
 
-        <label for="exercise">Exercise Data : </label>
-        <input type="number" id="exercise" name="exercise"> <strong>hour(s)</strong>
+        <label for="exercise">Exercise Data </label>
+        <br>
+        <input type="number" id="exercise" name="exercise" placeholder="in hour(s)"> 
         <br>
         <span id="exercise_msg" style="color:red"></span>
         <?php
@@ -81,8 +89,8 @@
         ?>
         <br>
 
-        <label for="wei">Weight : </label>
-        <input type="number" name="weight" id="wei"> <strong>kg(s)</strong>
+        <label for="wei">Weight </label><br>
+        <input type="number" name="weight" id="wei" placeholder="in kg(s)"> 
         <br>
         <span id="weight_msg" style="color:red"></span>
         <?php
@@ -102,5 +110,6 @@
             unset($_SESSION['global_msg']);
         }
     ?>
+    </div>
 </body>
 </html>
