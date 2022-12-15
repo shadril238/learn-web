@@ -18,8 +18,9 @@
 
 </head>
 <body>
-    <div class="main">
     <h3>Set Security Question</h3>
+    <div class="main">
+    
     <form method="post" action="../controllers/SecurityquestionAction_patient.php" novalidate onsubmit="return isValid(this);">
         <div class="inp">
         <label for="security_ques">Question </label>
