@@ -1,2 +1,2 @@
 # Learn-WEB
-This repository includes all the codes of Web Technologies course.
+This repository includes all the codes and also project of Web Technologies course.
